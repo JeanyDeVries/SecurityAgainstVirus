@@ -4,17 +4,15 @@ using UnityEngine;
 public class Virus : MonoBehaviour
 {
     [SerializeField]
-    private float spotRange, attackRange;
+    private float spotRange, attackRange, 
+        movementSpeed, damage;
 
-    [SerializeField]
-    private float movementSpeed;
-
-    private void Update()
+    public virtual void Update()
     {
         checkForCollision();
     }
 
-    private void checkForCollision()
+    public virtual void checkForCollision()
     {
         Collider[] hitColliders = 
             Physics.OverlapSphere(transform.position, spotRange);
@@ -27,7 +25,7 @@ public class Virus : MonoBehaviour
         }
     }
 
-    private void Follow(Transform target)
+    public virtual void Follow(Transform target)
     {
         transform.position = 
             Vector3.MoveTowards(transform.position, target.position, (movementSpeed * Time.deltaTime));
@@ -37,14 +35,13 @@ public class Virus : MonoBehaviour
             Attack(target);
     }
 
-    private void Attack(Transform target)
+    public virtual void Attack(Transform target)
     {
-        //Attack
-        Debug.Log("Attack");
-
         float distance = 
             Vector3.Distance(transform.position, target.position);
         if (distance > attackRange)
             Follow(target);
+
+        target.GetComponent<Player>().playerProps.health -= damage;
     }
 }

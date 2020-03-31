@@ -193,7 +193,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 326181130}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1.3272336, z: 0.9131157}
@@ -466,10 +466,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1662015867}
+  - component: {fileID: 1662015868}
   - component: {fileID: 1662015871}
   - component: {fileID: 1662015870}
   - component: {fileID: 1662015869}
-  - component: {fileID: 1662015868}
   m_Layer: 0
   m_Name: Virus
   m_TagString: Untagged
@@ -500,7 +500,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1662015866}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c519495079a10f54f9be238b41414ff9, type: 3}
+  m_Script: {fileID: 11500000, guid: a58ec2c93b99af344a92e67a64e55bff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spotRange: 20

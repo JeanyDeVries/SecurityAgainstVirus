@@ -1,16 +1,18 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     [SerializeField, Range(0f, 100f)]
     private float rotationSpeed, movementSpeed;
 
     private Rigidbody rb;
+    public PlayerProps playerProps;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        playerProps = new PlayerProps();
     }
 
     private void Update()
