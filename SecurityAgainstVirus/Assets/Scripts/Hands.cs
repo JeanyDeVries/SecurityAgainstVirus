@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
 
-public class Hand : MonoBehaviour
+public class Hands : MonoBehaviour
 {
-    [SerializeField]
-    private Transform leftHand, rightHand;
-
     private Animator animator;
+    public static bool isPunching;
 
     private void Awake()
     {
@@ -22,6 +20,7 @@ public class Hand : MonoBehaviour
             >= animator.GetCurrentAnimatorStateInfo(0).length)
         {
             animator.SetBool("LeftIsPunching", false);
+            isPunching = false;
         }
 
         if (Input.GetKeyDown(KeyCode.Mouse1))
@@ -32,6 +31,13 @@ public class Hand : MonoBehaviour
             >= animator.GetCurrentAnimatorStateInfo(0).length)
         {
             animator.SetBool("RightIsPunching", false);
+            isPunching = false;
+        }
+
+        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime
+            <= animator.GetCurrentAnimatorStateInfo(0).length / 2)
+        {
+            isPunching = true;
         }
     }
 

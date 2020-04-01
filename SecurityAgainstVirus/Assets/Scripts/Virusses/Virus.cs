@@ -35,8 +35,9 @@ public class Virus : MonoBehaviour
             return;
         }
 
+        Vector3 targetPos = new Vector3(target.position.x, target.position.y + 0.7f, target.position.z);
         transform.position = 
-            Vector3.MoveTowards(transform.position, target.position, (movementSpeed * Time.deltaTime));
+            Vector3.MoveTowards(transform.position, targetPos, (movementSpeed * Time.deltaTime));
     }
 
     public virtual void Attack(Transform target)
