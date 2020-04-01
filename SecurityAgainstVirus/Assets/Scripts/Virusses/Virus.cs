@@ -27,12 +27,16 @@ public class Virus : MonoBehaviour
 
     public virtual void Follow(Transform target)
     {
-        transform.position = 
-            Vector3.MoveTowards(transform.position, target.position, (movementSpeed * Time.deltaTime));
-        float distance = 
+        float distance =
             Vector3.Distance(transform.position, target.position);
         if (distance <= attackRange)
+        {
             Attack(target);
+            return;
+        }
+
+        transform.position = 
+            Vector3.MoveTowards(transform.position, target.position, (movementSpeed * Time.deltaTime));
     }
 
     public virtual void Attack(Transform target)

@@ -18,10 +18,21 @@ public class Hand : MonoBehaviour
         {
             animator.SetBool("LeftIsPunching", true);
         }
+        else if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime
+            >= animator.GetCurrentAnimatorStateInfo(0).length)
+        {
+            animator.SetBool("LeftIsPunching", false);
+        }
 
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             animator.SetBool("RightIsPunching", true);
         }
+        else if(animator.GetCurrentAnimatorStateInfo(0).normalizedTime 
+            >= animator.GetCurrentAnimatorStateInfo(0).length)
+        {
+            animator.SetBool("RightIsPunching", false);
+        }
     }
+
 }

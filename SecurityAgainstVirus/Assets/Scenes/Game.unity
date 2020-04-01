@@ -383,7 +383,7 @@ Animation:
   m_Animation: {fileID: 0}
   m_Animations:
   - {fileID: 7400000, guid: 16e4a121e9c9151428cd3833bc48996b, type: 2}
-  - {fileID: 7400000, guid: 282fbddc4f5b55948b8c8e8807176025, type: 2}
+  - {fileID: 7400000, guid: c4cf245ae90bce0488717d59109991cd, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
