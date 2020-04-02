@@ -1,14 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Virus : MonoBehaviour
 {
     [SerializeField]
     private float spotRange, attackRange, 
-        movementSpeed, damage;
+        movementSpeed, damage, attackCooldown;
+
+    private float elapsedTime;
 
     public virtual void Update()
     {
+        elapsedTime += Time.deltaTime;
+
         checkForCollision();
     }
 
@@ -29,9 +34,10 @@ public class Virus : MonoBehaviour
     {
         float distance =
             Vector3.Distance(transform.position, target.position);
-        if (distance <= attackRange)
+        if (distance <= attackRange && elapsedTime >= attackCooldown)
         {
             Attack(target);
+            elapsedTime = elapsedTime % attackCooldown;
             return;
         }
 
@@ -40,13 +46,13 @@ public class Virus : MonoBehaviour
             Vector3.MoveTowards(transform.position, targetPos, (movementSpeed * Time.deltaTime));
     }
 
-    public virtual void Attack(Transform target)
+    public virtual void Attack(Transform target) 
     {
         float distance = 
             Vector3.Distance(transform.position, target.position);
         if (distance > attackRange)
             Follow(target);
-
-        target.GetComponent<Player>().playerProps.health -= damage;
+        Player.playerProps.health -= damage;
+        target.GetComponent<Player>().healthBar.SetHealth(Player.playerProps.health);
     }
 }

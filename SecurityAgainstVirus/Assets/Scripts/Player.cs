@@ -6,13 +6,23 @@ public class Player : MonoBehaviour
     [SerializeField, Range(0f, 100f)]
     private float rotationSpeed, movementSpeed;
 
+    [SerializeField]
+    private float maxHealth, startMoney;
+
+    public static PlayerProps playerProps;
+    public HealthBar healthBar;
+
     private Rigidbody rb;
-    public PlayerProps playerProps;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         playerProps = new PlayerProps();
+
+        playerProps.health = maxHealth;
+        playerProps.money = startMoney;
+
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     private void Update()
