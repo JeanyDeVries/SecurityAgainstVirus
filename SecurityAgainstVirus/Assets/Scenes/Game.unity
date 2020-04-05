@@ -1645,6 +1645,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1151176222}
     m_Modifications:
+    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_Name
+      value: Virus (13)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1699,11 +1704,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -137.92001
-      objectReference: {fileID: 0}
-    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
-        type: 3}
-      propertyPath: m_Name
-      value: Virus (13)
       objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892374, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
@@ -2010,6 +2010,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1151176222}
     m_Modifications:
+    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_Name
+      value: Virus (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2064,11 +2069,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
-        type: 3}
-      propertyPath: m_Name
-      value: Virus (3)
       objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892374, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
@@ -2455,7 +2455,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000544577}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -2516,7 +2516,7 @@ Transform:
   m_GameObject: {fileID: 1000544577}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 200, y: 200, z: 200}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -3162,6 +3162,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1151176222}
     m_Modifications:
+    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_Name
+      value: Virus (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3216,11 +3221,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
-        type: 3}
-      propertyPath: m_Name
-      value: Virus (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892374, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
@@ -3281,6 +3281,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1151176222}
     m_Modifications:
+    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_Name
+      value: Virus (11)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3335,11 +3340,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -137.92001
-      objectReference: {fileID: 0}
-    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
-        type: 3}
-      propertyPath: m_Name
-      value: Virus (11)
       objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892374, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
@@ -3640,6 +3640,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1151176222}
     m_Modifications:
+    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_Name
+      value: Virus (10)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3694,11 +3699,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -137.92001
-      objectReference: {fileID: 0}
-    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
-        type: 3}
-      propertyPath: m_Name
-      value: Virus (10)
       objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892374, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
@@ -5200,6 +5200,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1151176222}
     m_Modifications:
+    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_Name
+      value: Virus (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5255,11 +5260,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
-        type: 3}
-      propertyPath: m_Name
-      value: Virus (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892374, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: attackCooldown
@@ -5280,6 +5280,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1151176222}
     m_Modifications:
+    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_Name
+      value: Virus (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5334,11 +5339,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -41.128002
-      objectReference: {fileID: 0}
-    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
-        type: 3}
-      propertyPath: m_Name
-      value: Virus (6)
       objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892374, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
@@ -5453,6 +5453,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1151176222}
     m_Modifications:
+    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_Name
+      value: Virus (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5508,11 +5513,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -41.128002
       objectReference: {fileID: 0}
-    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
-        type: 3}
-      propertyPath: m_Name
-      value: Virus (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892374, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: attackCooldown
@@ -5533,6 +5533,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1151176222}
     m_Modifications:
+    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_Name
+      value: Virus (9)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5588,11 +5593,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -137.92001
       objectReference: {fileID: 0}
-    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
-        type: 3}
-      propertyPath: m_Name
-      value: Virus (9)
-      objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892374, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: attackCooldown
@@ -5613,6 +5613,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1151176222}
     m_Modifications:
+    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_Name
+      value: Virus (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5668,11 +5673,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
-        type: 3}
-      propertyPath: m_Name
-      value: Virus (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892374, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: attackCooldown
@@ -5693,6 +5693,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1151176222}
     m_Modifications:
+    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_Name
+      value: Virus (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5748,11 +5753,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -41.128002
       objectReference: {fileID: 0}
-    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
-        type: 3}
-      propertyPath: m_Name
-      value: Virus (8)
-      objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892374, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: attackCooldown
@@ -5773,6 +5773,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1151176222}
     m_Modifications:
+    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_Name
+      value: Virus (14)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5827,11 +5832,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -137.92001
-      objectReference: {fileID: 0}
-    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
-        type: 3}
-      propertyPath: m_Name
-      value: Virus (14)
       objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892374, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
@@ -6039,6 +6039,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1151176222}
     m_Modifications:
+    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_Name
+      value: Virus (12)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6094,11 +6099,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -137.92001
       objectReference: {fileID: 0}
-    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
-        type: 3}
-      propertyPath: m_Name
-      value: Virus (12)
-      objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892374, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: attackCooldown
@@ -6119,6 +6119,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1151176222}
     m_Modifications:
+    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_Name
+      value: Virus (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6173,11 +6178,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
-        type: 3}
-      propertyPath: m_Name
-      value: Virus (4)
       objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892374, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
@@ -6294,6 +6294,16 @@ PrefabInstance:
       propertyPath: field of view
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 2668389930970310194, guid: bf7ea57936eb9e040988626a6b37e5fe,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2668389931014001172, guid: bf7ea57936eb9e040988626a6b37e5fe,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf7ea57936eb9e040988626a6b37e5fe, type: 3}
 --- !u!1001 &7952566512756918890
@@ -6303,6 +6313,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1151176222}
     m_Modifications:
+    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_Name
+      value: Virus
+      objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6357,11 +6372,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
-        type: 3}
-      propertyPath: m_Name
-      value: Virus
       objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892374, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}

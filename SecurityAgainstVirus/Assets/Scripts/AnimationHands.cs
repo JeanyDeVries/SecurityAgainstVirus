@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Hands : MonoBehaviour
+public class AnimationHands : MonoBehaviour
 {
     private Animator animator;
     public static bool isPunching;

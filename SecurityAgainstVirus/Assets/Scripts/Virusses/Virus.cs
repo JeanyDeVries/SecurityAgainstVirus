@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Virus : MonoBehaviour
@@ -9,10 +8,12 @@ public class Virus : MonoBehaviour
         movementSpeed, damage, attackCooldown;
 
     private float elapsedTime;
+    private GameObject player;
 
     public virtual void Update()
     {
         elapsedTime += Time.deltaTime;
+        player = GameObject.FindGameObjectWithTag("Player");
 
         checkForCollision();
     }
@@ -54,5 +55,34 @@ public class Virus : MonoBehaviour
             Follow(target);
         Player.playerProps.health -= damage;
         target.GetComponent<Player>().healthBar.SetHealth(Player.playerProps.health);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        IEnumerator couritine = RestoreForceAfterTime();
+        StartCoroutine(couritine);
+    }
+
+    private IEnumerator RestoreForceAfterTime()
+    {
+        yield return new WaitForSeconds(3f);
+        Rigidbody rigidbody = GetComponent<Rigidbody>();
+        rigidbody.velocity = Vector3.zero;
+        rigidbody.angularVelocity = Vector3.zero;
+
+        Vector3 targetForward = (transform.position - player.transform.position);
+        targetForward.Normalize();
+        Quaternion targetRotation = Quaternion.LookRotation(targetForward);
+        Quaternion currentRotation = transform.rotation;
+
+        float t = 0.0f;
+        while (t < 1.0f)
+        {
+            t += Time.deltaTime / 1.0f;
+            transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, t);
+
+            yield return null;
+        }
+        yield return null;
     }
 }
