@@ -4,8 +4,7 @@ using UnityEngine;
 public class Virus : MonoBehaviour
 {
     [SerializeField]
-    private float spotRange, attackRange, 
-        movementSpeed, damage, attackCooldown;
+    private VirusProps properties;
 
     private float elapsedTime;
     private GameObject player;
@@ -21,7 +20,7 @@ public class Virus : MonoBehaviour
     public virtual void checkForCollision()
     {
         Collider[] hitColliders = 
-            Physics.OverlapSphere(transform.position, spotRange);
+            Physics.OverlapSphere(transform.position, properties.spotRange);
 
         if (hitColliders == null) return;
         for (int i = 0; i < hitColliders.Length; i++)
@@ -35,25 +34,25 @@ public class Virus : MonoBehaviour
     {
         float distance =
             Vector3.Distance(transform.position, target.position);
-        if (distance <= attackRange && elapsedTime >= attackCooldown)
+        if (distance <= properties.attackRange && elapsedTime >= properties.attackCooldown)
         {
             Attack(target);
-            elapsedTime = elapsedTime % attackCooldown;
+            elapsedTime = elapsedTime % properties.attackCooldown;
             return;
         }
 
         Vector3 targetPos = new Vector3(target.position.x, target.position.y + 0.7f, target.position.z);
         transform.position = 
-            Vector3.MoveTowards(transform.position, targetPos, (movementSpeed * Time.deltaTime));
+            Vector3.MoveTowards(transform.position, targetPos, (properties.movementSpeed * Time.deltaTime));
     }
 
     public virtual void Attack(Transform target) 
     {
         float distance = 
             Vector3.Distance(transform.position, target.position);
-        if (distance > attackRange)
+        if (distance > properties.attackRange)
             Follow(target);
-        Player.playerProps.health -= damage;
+        Player.playerProps.health -= properties.damage;
         target.GetComponent<Player>().healthBar.SetHealth(Player.playerProps.health);
     }
 
