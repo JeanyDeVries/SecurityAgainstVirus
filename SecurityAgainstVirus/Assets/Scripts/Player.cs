@@ -7,12 +7,14 @@ public class Player : MonoBehaviour
     private float rotationSpeed, movementSpeed;
 
     [SerializeField]
-    private float maxHealth, startMoney;
+    private float maxHealth, startMoney, jumpHeight;
 
     public static PlayerProps playerProps;
     public HealthBar healthBar;
 
     private Rigidbody rb;
+    private bool onGround;
+    private Vector3 velocity;
 
     private void Awake()
     {
@@ -30,6 +32,25 @@ public class Player : MonoBehaviour
         Move();
     }
 
+    private void FixedUpdate()
+    {
+        if (onGround && Input.GetButtonDown("Jump"))
+        {
+            Debug.Log("Jump");
+            Jump();
+        }
+
+        onGround = false;
+    }
+
+    private void Jump()
+    {
+        if (!onGround) return;
+        velocity = rb.velocity;
+        velocity.y += Mathf.Sqrt(-2f * Physics.gravity.y * jumpHeight);
+        rb.velocity = velocity;
+    }
+
     private void Move()
     {
         Vector2 playerInput;
@@ -41,5 +62,25 @@ public class Player : MonoBehaviour
 
         transform.Rotate(0, playerInput.x * rotationSpeed, 0);
         transform.Translate(0, 0, playerInput.y * movementSpeed);
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        EvaluateCollision(collision);
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        EvaluateCollision(collision);
+    }
+
+    private void EvaluateCollision(Collision collision)
+    {
+        for (int i = 0; i < collision.contactCount; i++)
+        {
+            Vector3 normal = collision.GetContact(i).normal;
+            onGround |= normal.y >= 0.9f;
+        }
     }
 }
