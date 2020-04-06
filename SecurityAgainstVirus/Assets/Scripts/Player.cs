@@ -36,7 +36,6 @@ public class Player : MonoBehaviour
     {
         if (onGround && Input.GetButtonDown("Jump"))
         {
-            Debug.Log("Jump");
             Jump();
         }
 

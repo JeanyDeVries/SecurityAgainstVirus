@@ -8,6 +8,7 @@ public class Virus : MonoBehaviour
 
     private float elapsedTime;
     private GameObject player;
+    private RaycastHit hit;
 
     public virtual void Update()
     {
@@ -15,6 +16,7 @@ public class Virus : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
 
         checkForCollision();
+        CheckCollisionObstacles();
     }
 
     public virtual void checkForCollision()
@@ -46,6 +48,41 @@ public class Virus : MonoBehaviour
             Vector3.MoveTowards(transform.position, targetPos, (properties.movementSpeed * Time.deltaTime));
     }
 
+    public virtual void CheckCollisionObstacles()
+    {
+        Vector3 dir = (player.transform.position - transform.position).normalized;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 5))
+        {
+            if (hit.transform.gameObject.GetComponent<Rigidbody>() == null)
+            {
+                transform.position += Vector3.up * Time.deltaTime;
+                return;
+            }
+        }
+
+        Vector3 leftR = transform.position;
+        Vector3 rightR = transform.position;
+
+        leftR.x -= 2;
+        rightR.x += 2;
+
+        if (Physics.Raycast(leftR, transform.forward, out hit, 5))
+        {
+            if (hit.transform.gameObject.GetComponent<Rigidbody>() == null)
+            {
+                transform.position += Vector3.right * Time.deltaTime;
+            }
+        }
+
+        if (Physics.Raycast(rightR, transform.forward, out hit, 5))
+        {
+            if (hit.transform.gameObject.GetComponent<Rigidbody>() == null)
+            {
+                transform.position += Vector3.left * Time.deltaTime;
+            }
+        }
+    }
+
     public virtual void Attack(Transform target) 
     {
         float distance = 
@@ -64,7 +101,7 @@ public class Virus : MonoBehaviour
 
     private IEnumerator RestoreForceAfterTime()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(properties.restorationTime);
         Rigidbody rigidbody = GetComponent<Rigidbody>();
         rigidbody.velocity = Vector3.zero;
         rigidbody.angularVelocity = Vector3.zero;
