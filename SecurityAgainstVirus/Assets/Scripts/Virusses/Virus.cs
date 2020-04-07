@@ -9,14 +9,16 @@ public class Virus : MonoBehaviour
     private float elapsedTime;
     private GameObject player;
     private RaycastHit hit;
+    private Vector3 lookDirection;
+    private bool avoiding = false;
 
     public virtual void Update()
     {
         elapsedTime += Time.deltaTime;
         player = GameObject.FindGameObjectWithTag("Player");
 
+        ObstacleAvoidance();
         checkForCollision();
-        CheckCollisionObstacles();
     }
 
     public virtual void checkForCollision()
@@ -43,43 +45,48 @@ public class Virus : MonoBehaviour
             return;
         }
 
+
         Vector3 targetPos = new Vector3(target.position.x, target.position.y + 0.7f, target.position.z);
-        transform.position = 
-            Vector3.MoveTowards(transform.position, targetPos, (properties.movementSpeed * Time.deltaTime));
+
+        Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
+        Quaternion currentRotation = transform.rotation;
+        transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, Time.deltaTime);
+
+        transform.Translate(Vector3.forward * 2f * Time.deltaTime);
     }
 
-    public virtual void CheckCollisionObstacles()
+    public virtual void ObstacleAvoidance()
     {
-        Vector3 dir = (player.transform.position - transform.position).normalized;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 5))
+        lookDirection = (player.transform.position - transform.position).normalized;
+
+        float shoulderMultiplier = 0.75f;
+        float rayDistance = 10;
+        Vector3 leftRayPos = transform.position - (transform.right * shoulderMultiplier);
+        Vector3 rightRayPos = transform.position + (transform.right * shoulderMultiplier);
+
+        if(Physics.Raycast(leftRayPos, transform.forward, out hit, rayDistance))
         {
-            if (hit.transform.gameObject.GetComponent<Rigidbody>() == null)
+            Debug.DrawLine(transform.position, hit.point, Color.red);
+            if(!hit.collider.CompareTag("Enemy") && hit.collider.gameObject.GetComponent<Rigidbody>() == null)
             {
-                transform.position += Vector3.up * Time.deltaTime;
-                return;
+                lookDirection += hit.normal * 20.0f;
+                avoiding = true;
             }
         }
-
-        Vector3 leftR = transform.position;
-        Vector3 rightR = transform.position;
-
-        leftR.x -= 2;
-        rightR.x += 2;
-
-        if (Physics.Raycast(leftR, transform.forward, out hit, 5))
+        else if (Physics.Raycast(rightRayPos, transform.forward, out hit, rayDistance))
         {
-            if (hit.transform.gameObject.GetComponent<Rigidbody>() == null)
+            Debug.DrawLine(transform.position, hit.point, Color.red);
+            if(!hit.collider.CompareTag("Enemy") && hit.collider.gameObject.GetComponent<Rigidbody>() == null)
             {
-                transform.position += Vector3.right * Time.deltaTime;
+                lookDirection += hit.normal * 20.0f;
+                avoiding = true;
             }
         }
-
-        if (Physics.Raycast(rightR, transform.forward, out hit, 5))
+        else
         {
-            if (hit.transform.gameObject.GetComponent<Rigidbody>() == null)
-            {
-                transform.position += Vector3.left * Time.deltaTime;
-            }
+            Debug.DrawLine(leftRayPos, transform.forward * rayDistance, Color.yellow);
+            Debug.DrawLine(rightRayPos, transform.forward * rayDistance, Color.yellow);
+            avoiding = false;
         }
     }
 
@@ -106,7 +113,7 @@ public class Virus : MonoBehaviour
         rigidbody.velocity = Vector3.zero;
         rigidbody.angularVelocity = Vector3.zero;
 
-        Vector3 targetForward = (transform.position - player.transform.position);
+        Vector3 targetForward = (player.transform.position - transform.position);
         targetForward.Normalize();
         Quaternion targetRotation = Quaternion.LookRotation(targetForward);
         Quaternion currentRotation = transform.rotation;
