@@ -100,7 +100,12 @@ public class Virus : MonoBehaviour
         target.GetComponent<Player>().healthBar.SetHealth(Player.playerProps.health);
     }
 
-    void OnCollisionEnter(Collision collision)
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter(Collision collision)
     {
         IEnumerator couritine = RestoreForceAfterTime();
         StartCoroutine(couritine);
