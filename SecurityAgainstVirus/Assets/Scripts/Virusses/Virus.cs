@@ -14,7 +14,6 @@ public class Virus : MonoBehaviour
 
     public virtual void Update()
     {
-        elapsedTime += Time.deltaTime;
         player = GameObject.FindGameObjectWithTag("Player");
 
         ObstacleAvoidance();
@@ -44,7 +43,8 @@ public class Virus : MonoBehaviour
             elapsedTime = elapsedTime % properties.attackCooldown;
             return;
         }
-
+        else
+            elapsedTime = 0f;
 
         Vector3 targetPos = new Vector3(target.position.x, target.position.y + 0.7f, target.position.z);
 
@@ -52,7 +52,7 @@ public class Virus : MonoBehaviour
         Quaternion currentRotation = transform.rotation;
         transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, Time.deltaTime);
 
-        transform.Translate(Vector3.forward * 2f * Time.deltaTime);
+        transform.Translate(Vector3.forward * properties.movementSpeed * Time.deltaTime);
     }
 
     public virtual void ObstacleAvoidance()
@@ -60,15 +60,16 @@ public class Virus : MonoBehaviour
         lookDirection = (player.transform.position - transform.position).normalized;
 
         float shoulderMultiplier = 0.75f;
-        float rayDistance = 10;
+        float rayDistance = 20;
         Vector3 leftRayPos = transform.position - (transform.right * shoulderMultiplier);
         Vector3 rightRayPos = transform.position + (transform.right * shoulderMultiplier);
 
         if(Physics.Raycast(leftRayPos, transform.forward, out hit, rayDistance))
         {
             Debug.DrawLine(transform.position, hit.point, Color.red);
-            if(!hit.collider.CompareTag("Enemy") && hit.collider.gameObject.GetComponent<Rigidbody>() == null)
+            if(hit.collider.tag == ("Firewall") || hit.collider.tag == ("Obstacle"))
             {
+                Debug.Log("Avoiding1");
                 lookDirection += hit.normal * 20.0f;
                 avoiding = true;
             }
@@ -76,8 +77,9 @@ public class Virus : MonoBehaviour
         else if (Physics.Raycast(rightRayPos, transform.forward, out hit, rayDistance))
         {
             Debug.DrawLine(transform.position, hit.point, Color.red);
-            if(!hit.collider.CompareTag("Enemy") && hit.collider.gameObject.GetComponent<Rigidbody>() == null)
+            if(hit.collider.tag == ("Firewall") || hit.collider.tag == ("Obstacle"))
             {
+                Debug.Log("Avoiding2");
                 lookDirection += hit.normal * 20.0f;
                 avoiding = true;
             }
@@ -92,6 +94,8 @@ public class Virus : MonoBehaviour
 
     public virtual void Attack(Transform target) 
     {
+        elapsedTime += Time.deltaTime;
+
         float distance = 
             Vector3.Distance(transform.position, target.position);
         if (distance > properties.attackRange)
