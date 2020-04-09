@@ -12,10 +12,13 @@ public class Virus : MonoBehaviour
     private Vector3 lookDirection;
     private bool avoiding = false;
 
-    public virtual void Update()
+    private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+    }
 
+    public virtual void Update()
+    {
         ObstacleAvoidance();
         checkForCollision();
     }
@@ -50,7 +53,7 @@ public class Virus : MonoBehaviour
 
         Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
         Quaternion currentRotation = transform.rotation;
-        transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, properties.turnSpeed * Time.deltaTime);
 
         transform.Translate(Vector3.forward * properties.movementSpeed * Time.deltaTime);
     }
@@ -59,17 +62,18 @@ public class Virus : MonoBehaviour
     {
         lookDirection = (player.transform.position - transform.position).normalized;
 
-        float shoulderMultiplier = 0.75f;
-        float rayDistance = 20;
+        float shoulderMultiplier = 0.5f;
+        float rayDistance = 10;
         Vector3 leftRayPos = transform.position - (transform.right * shoulderMultiplier);
         Vector3 rightRayPos = transform.position + (transform.right * shoulderMultiplier);
 
-        if(Physics.Raycast(leftRayPos, transform.forward, out hit, rayDistance))
+
+        if (Physics.Raycast(leftRayPos, transform.forward, out hit, rayDistance))
         {
             Debug.DrawLine(transform.position, hit.point, Color.red);
-            if(hit.collider.tag == ("Firewall") || hit.collider.tag == ("Obstacle"))
+            if(hit.transform.gameObject.tag == "Firewall" || hit.transform.gameObject.tag == "Obstacle")
             {
-                Debug.Log("Avoiding1");
+                Debug.Log("Avoiding left");
                 lookDirection += hit.normal * 20.0f;
                 avoiding = true;
             }
@@ -77,9 +81,9 @@ public class Virus : MonoBehaviour
         else if (Physics.Raycast(rightRayPos, transform.forward, out hit, rayDistance))
         {
             Debug.DrawLine(transform.position, hit.point, Color.red);
-            if(hit.collider.tag == ("Firewall") || hit.collider.tag == ("Obstacle"))
+            if(hit.transform.gameObject.tag == "Firewall" || hit.transform.gameObject.tag == "Obstacle")
             {
-                Debug.Log("Avoiding2");
+                Debug.Log("Avoiding right");
                 lookDirection += hit.normal * 20.0f;
                 avoiding = true;
             }

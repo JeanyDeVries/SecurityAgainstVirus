@@ -18,3 +18,4 @@ MonoBehaviour:
   damage: 2
   attackCooldown: 3
   restorationTime: 3
+  turnSpeed: 2

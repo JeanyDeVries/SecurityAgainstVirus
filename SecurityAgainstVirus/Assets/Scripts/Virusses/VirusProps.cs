@@ -5,5 +5,5 @@ public class VirusProps : ScriptableObject
 {
     public float spotRange, attackRange,
         movementSpeed, damage, attackCooldown,
-        restorationTime;
+        restorationTime, turnSpeed;
 }
