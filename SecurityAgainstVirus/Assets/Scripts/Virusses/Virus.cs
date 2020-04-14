@@ -7,9 +7,10 @@ public class Virus : MonoBehaviour
     private VirusProps properties;
 
     private float elapsedTime;
-    private GameObject player;
+    private bool isDying;
     private RaycastHit hit;
     private Vector3 lookDirection;
+    private GameObject player;
     private AudioSource audioSource;
 
     private void Awake()
@@ -53,6 +54,7 @@ public class Virus : MonoBehaviour
 
         Vector3 targetPos = new Vector3(target.position.x, target.position.y + 0.7f, target.position.z);
 
+        if (isDying) return;
         Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
         Quaternion currentRotation = transform.rotation;
         transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, properties.turnSpeed * Time.deltaTime);
@@ -115,6 +117,7 @@ public class Virus : MonoBehaviour
     public IEnumerator WaitingForDeath()
     {
         audioSource.Play();
+        isDying = true;
         yield return new WaitForSeconds(audioSource.clip.length);
         Die();
     }
