@@ -116,8 +116,12 @@ public class Virus : MonoBehaviour
 
     public IEnumerator WaitingForDeath()
     {
-        audioSource.Play();
         isDying = true;
+
+        audioSource.Play();
+        ParticleSystem deathEffect = Instantiate(properties.deathEffect, transform.position, Quaternion.identity);
+        deathEffect.Play();
+
         yield return new WaitForSeconds(audioSource.clip.length);
         Die();
     }

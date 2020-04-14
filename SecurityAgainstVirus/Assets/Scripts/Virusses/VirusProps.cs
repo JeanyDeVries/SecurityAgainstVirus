@@ -7,4 +7,5 @@ public class VirusProps : ScriptableObject
         movementSpeed, damage, attackCooldown,
         restorationTime, turnSpeed;
     public AudioClip deathSound;
+    public ParticleSystem deathEffect;
 }
