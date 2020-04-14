@@ -10,11 +10,13 @@ public class Virus : MonoBehaviour
     private GameObject player;
     private RaycastHit hit;
     private Vector3 lookDirection;
-    private bool avoiding = false;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = properties.deathSound;
     }
 
     public virtual void Update()
@@ -75,7 +77,6 @@ public class Virus : MonoBehaviour
             {
                 Debug.Log("Avoiding left");
                 lookDirection += hit.normal * 20.0f;
-                avoiding = true;
             }
         }
         else if (Physics.Raycast(rightRayPos, transform.forward, out hit, rayDistance))
@@ -85,14 +86,12 @@ public class Virus : MonoBehaviour
             {
                 Debug.Log("Avoiding right");
                 lookDirection += hit.normal * 20.0f;
-                avoiding = true;
             }
         }
         else
         {
             Debug.DrawLine(leftRayPos, transform.forward * rayDistance, Color.yellow);
             Debug.DrawLine(rightRayPos, transform.forward * rayDistance, Color.yellow);
-            avoiding = false;
         }
     }
 
@@ -108,9 +107,16 @@ public class Virus : MonoBehaviour
         target.GetComponent<Player>().healthBar.SetHealth(Player.playerProps.health);
     }
 
-    public void Die()
+    private void Die()
     {
         Destroy(gameObject);
+    }
+
+    public IEnumerator WaitingForDeath()
+    {
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
+        Die();
     }
 
     private void OnCollisionEnter(Collision collision)

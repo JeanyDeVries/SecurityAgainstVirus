@@ -19,3 +19,4 @@ MonoBehaviour:
   attackCooldown: 3
   restorationTime: 3
   turnSpeed: 2
+  deathSound: {fileID: 8300000, guid: bbb778d96f99d4c4491b546e4d2a0f8d, type: 3}

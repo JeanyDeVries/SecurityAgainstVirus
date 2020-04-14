@@ -8,7 +8,9 @@ public class Firewall : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            other.GetComponent<Virus>().Die();
+            IEnumerator couritine = other.GetComponent<Virus>().WaitingForDeath();
+            StartCoroutine(couritine);
+            //other.GetComponent<Virus>().Die();
         }
     }
 }

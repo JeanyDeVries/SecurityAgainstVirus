@@ -62,12 +62,6 @@ public class Player : MonoBehaviour
 
         transform.Rotate(0, playerInput.x * rotationSpeed, 0);
         transform.Translate(0, 0, playerInput.y * movementSpeed);
-
-
-       // yaw += rotationSpeed * Input.GetAxis("Mouse X") * Time.deltaTime;
-       // pitch -= rotationSpeed * Input.GetAxis("Mouse Y") * Time.deltaTime;
-
-       // transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
     }
 
 
