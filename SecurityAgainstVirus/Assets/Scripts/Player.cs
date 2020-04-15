@@ -15,7 +15,6 @@ public class Player : MonoBehaviour
     private Rigidbody rb;
     private bool onGround;
     private Vector3 velocity;
-    private float yaw, pitch;
 
     private void Awake()
     {
