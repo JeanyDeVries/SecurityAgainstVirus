@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class Virus : MonoBehaviour
 {
-    [SerializeField]
-    private VirusProps properties;
+    public VirusProps properties;
 
     private float elapsedTime;
     private bool isDying;
@@ -43,16 +42,12 @@ public class Virus : MonoBehaviour
     {
         float distance =
             Vector3.Distance(transform.position, target.position);
-        if (distance <= properties.attackRange && elapsedTime >= properties.attackCooldown)
+        if (distance <= properties.attackRange)
         {
-            Attack(target);
-            elapsedTime = elapsedTime % properties.attackCooldown;
+            elapsedTime += Time.deltaTime;
+            CheckIfInAttackDistance(target);
             return;
         }
-        else
-            elapsedTime = 0f;
-
-        Vector3 targetPos = new Vector3(target.position.x, target.position.y + 0.7f, target.position.z);
 
         if (isDying) return;
         Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
@@ -97,14 +92,29 @@ public class Virus : MonoBehaviour
         }
     }
 
-    public virtual void Attack(Transform target) 
+    public virtual void CheckIfInAttackDistance(Transform target)
     {
         elapsedTime += Time.deltaTime;
 
-        float distance = 
+        float distance =
             Vector3.Distance(transform.position, target.position);
         if (distance > properties.attackRange)
+        {
             Follow(target);
+            elapsedTime = 0f;
+        }
+
+        if (elapsedTime >= properties.attackCooldown)
+        {
+            DealDamage(target);
+            elapsedTime = elapsedTime % properties.attackCooldown;
+        }
+    }
+
+    public virtual void DealDamage(Transform target)
+    {
+        //Play attack animation + sound
+
         Player.playerProps.health -= properties.damage;
         target.GetComponent<Player>().healthBar.SetHealth(Player.playerProps.health);
     }
