@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Virus : MonoBehaviour
 {
@@ -11,10 +12,12 @@ public class Virus : MonoBehaviour
     private Vector3 lookDirection;
     private GameObject player;
     private AudioSource audioSource;
+    private NavMeshAgent navMeshAgent;
 
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        navMeshAgent = GetComponent<NavMeshAgent>();
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = properties.deathSound;
     }
@@ -50,18 +53,21 @@ public class Virus : MonoBehaviour
         }
 
         if (isDying) return;
-        Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
-        Quaternion currentRotation = transform.rotation;
-        transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, properties.turnSpeed * Time.deltaTime);
+        navMeshAgent.SetDestination(player.transform.position);
+        //Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
+        //Quaternion currentRotation = transform.rotation;
+        //transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, properties.turnSpeed * Time.deltaTime);
 
-        transform.Translate(Vector3.forward * properties.movementSpeed * Time.deltaTime);
+        //transform.Translate(Vector3.forward * properties.movementSpeed * Time.deltaTime);
     }
 
     public virtual void ObstacleAvoidance()
     {
         lookDirection = (player.transform.position - transform.position).normalized;
 
-        float shoulderMultiplier = 0.5f;
+
+
+        /*float shoulderMultiplier = 0.5f;
         float rayDistance = 10;
         Vector3 leftRayPos = transform.position - (transform.right * shoulderMultiplier);
         Vector3 rightRayPos = transform.position + (transform.right * shoulderMultiplier);
@@ -90,6 +96,7 @@ public class Virus : MonoBehaviour
             Debug.DrawLine(leftRayPos, transform.forward * rayDistance, Color.yellow);
             Debug.DrawLine(rightRayPos, transform.forward * rayDistance, Color.yellow);
         }
+        */
     }
 
     public virtual void CheckIfInAttackDistance(Transform target)
