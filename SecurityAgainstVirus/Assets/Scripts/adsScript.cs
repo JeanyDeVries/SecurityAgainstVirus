@@ -19,7 +19,10 @@ public class adsScript : MonoBehaviour
         start = transform.position;
         target = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(Curve());
-        end = target.transform.position;
+        Vector3 targetPos = new Vector3(Random.Range(target.transform.position.x - 0.5f, target.transform.position.x + 0.5f),
+            Random.Range(target.transform.position.y - 0.5f, target.transform.position.y + 0.5f),
+            Random.Range(target.transform.position.z - 0.5f, target.transform.position.z + 0.5f));
+        end = targetPos;
     }
 
     IEnumerator Curve()
