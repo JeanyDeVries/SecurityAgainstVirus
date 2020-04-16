@@ -332,6 +332,98 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.3600492, y: 1.4769642, z: 1}
   m_Center: {x: -0.026102662, y: 0.51319206, z: 0}
+--- !u!1 &250218926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 250218927}
+  - component: {fileID: 250218930}
+  - component: {fileID: 250218928}
+  - component: {fileID: 250218929}
+  m_Layer: 5
+  m_Name: Money
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &250218927
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250218926}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 711847914}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -492.1, y: 218.3}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &250218928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250218926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.2287736, g: 0.5, b: 0.3111927, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: decdfb3860b64734e98c6ce5c2406a20, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 103
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u20AC123133"
+--- !u!222 &250218929
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250218926}
+  m_CullTransparentMesh: 0
+--- !u!114 &250218930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250218926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7217874cf4e7de42a96a343d887181b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &310435115
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,7 +607,7 @@ PrefabInstance:
     - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
@@ -677,6 +769,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 453640039}
+  - {fileID: 250218927}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1269,7 +1362,7 @@ PrefabInstance:
     - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
@@ -1638,7 +1731,7 @@ PrefabInstance:
     - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
@@ -2440,7 +2533,7 @@ PrefabInstance:
     - target: {fileID: 2668389932111488402, guid: bf7ea57936eb9e040988626a6b37e5fe,
         type: 3}
       propertyPath: startMoney
-      value: 100
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 2668389932111488402, guid: bf7ea57936eb9e040988626a6b37e5fe,
         type: 3}
