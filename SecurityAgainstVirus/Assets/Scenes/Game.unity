@@ -2715,6 +2715,11 @@ PrefabInstance:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5393864154779636014, guid: 4b1780c5a8a398c4eaf27385a903b2ed,
+        type: 3}
+      propertyPath: m_TagString
+      value: Firewall
+      objectReference: {fileID: 0}
     - target: {fileID: 5393864154779636048, guid: 4b1780c5a8a398c4eaf27385a903b2ed,
         type: 3}
       propertyPath: m_IsTrigger

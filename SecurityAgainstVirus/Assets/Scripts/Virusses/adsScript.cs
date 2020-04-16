@@ -51,8 +51,12 @@ public class adsScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Play hit animation
+        if(other.tag == "Firewall")
+        {
+            Destroy(this.gameObject);
+        }
 
-        if (other.GetComponent<Player>() != null)
+        if (other.tag == "Player")
         {
             Player.playerProps.health -= damage;
             other.GetComponent<Player>().healthBar.SetHealth(Player.playerProps.health);
