@@ -53,6 +53,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0.2
+  duration: 2
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.98828125
+      inSlope: -0.55097437
+      outSlope: -0.55097437
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.7465234
+      value: 0.576966
+      inSlope: -1.3306475
+      outSlope: -1.3306475
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.08698945
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.84508735
+      value: 0.40463936
+      inSlope: -1.2155099
+      outSlope: -1.2155099
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.7329633
+      outWeight: 0.75002676
+    - serializedVersion: 3
+      time: 1.0040894
+      value: -0.008405685
+      inSlope: -2.597735
+      outSlope: -2.597735
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!33 &2426264480957685938
 MeshFilter:
   m_ObjectHideFlags: 0

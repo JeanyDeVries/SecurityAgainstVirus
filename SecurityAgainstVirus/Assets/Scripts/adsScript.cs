@@ -5,19 +5,45 @@ using UnityEngine;
 public class adsScript : MonoBehaviour
 {
     [SerializeField]
-    private float damage;
+    private float damage, duration;
 
-    private float frames = 1;
-   
-    private void Update()
+    [SerializeField]
+    private AnimationCurve curve;
+
+    private float time;
+    private Vector3 start, end;
+    private GameObject target;
+
+    private void Start()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime);
-        float posY = (frames/60) / 10;
-        transform.position = Vector3.Lerp(transform.position,
-            new Vector3(Random.Range(0, 0.2f), posY,
-            Random.Range(0.2f, 0.4f)), Time.deltaTime);
-        frames++;
+        start = transform.position;
+        target = GameObject.FindGameObjectWithTag("Player");
+        StartCoroutine(Curve());
+        end = target.transform.position;
     }
+
+    IEnumerator Curve()
+    {
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+
+            float linearT = time / duration;
+            float heightT = curve.Evaluate(linearT);
+
+            float height = Mathf.Lerp(0f, transform.localScale.y, heightT);
+
+            transform.position = Vector3.Lerp(start, end, linearT) + new Vector3(0f, height, 0f);
+
+            if (transform.position == end)
+            {
+                Destroy(this.gameObject);
+            }
+
+            yield return null;
+        }
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -34,7 +60,7 @@ public class adsScript : MonoBehaviour
 
     private IEnumerator WaitingToDestroy()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(duration);
         Destroy(this.gameObject);
     }
 

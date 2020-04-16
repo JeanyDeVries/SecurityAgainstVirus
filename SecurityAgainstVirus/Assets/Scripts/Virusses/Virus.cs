@@ -8,8 +8,6 @@ public class Virus : MonoBehaviour
 
     private float elapsedTime;
     private bool isDying;
-    private RaycastHit hit;
-    private Vector3 lookDirection;
     private GameObject player;
     private AudioSource audioSource;
     private NavMeshAgent navMeshAgent;
@@ -43,7 +41,10 @@ public class Virus : MonoBehaviour
     public virtual void Follow(Transform target)
     {
         if (isDying) return;
-        navMeshAgent.SetDestination(player.transform.position);
+        Vector3 targetPos = new Vector3(player.transform.position.x,
+            player.transform.position.y + 1f,
+            player.transform.position.z);
+        navMeshAgent.SetDestination(targetPos);
 
         float distance =
             Vector3.Distance(transform.position, target.position);
@@ -58,6 +59,7 @@ public class Virus : MonoBehaviour
     public virtual void CheckIfInAttackDistance(Transform target)
     {
         elapsedTime += Time.deltaTime;
+        navMeshAgent.SetDestination(transform.position);
 
         float distance =
             Vector3.Distance(transform.position, target.position);

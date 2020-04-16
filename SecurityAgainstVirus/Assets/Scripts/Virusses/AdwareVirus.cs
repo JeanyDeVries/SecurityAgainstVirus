@@ -18,7 +18,7 @@ public class AdwareVirus : Virus
         for (int i = 0; i < adsAmount; i++)
         {
             Debug.Log("Spawning ads");
-            GameObject newAd = Instantiate(ad, transform.position, Quaternion.identity);
+            GameObject newAd = Instantiate(ad, transform.position, Quaternion.identity, this.transform);
             ads.Add(newAd);
         }
     }
