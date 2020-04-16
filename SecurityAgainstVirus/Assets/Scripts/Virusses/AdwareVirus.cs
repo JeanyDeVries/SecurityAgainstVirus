@@ -29,11 +29,4 @@ public class AdwareVirus : Virus
             ads.Add(newAd);
         }
     }
-
-    public override void Update()
-    {
-        base.Update();
-
-       
-    }
 }

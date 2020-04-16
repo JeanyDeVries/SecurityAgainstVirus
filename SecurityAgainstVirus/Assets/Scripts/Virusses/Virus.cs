@@ -12,7 +12,7 @@ public class Virus : MonoBehaviour
     private AudioSource audioSource;
     private NavMeshAgent navMeshAgent;
 
-    private void Awake()
+    public virtual void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -41,9 +41,9 @@ public class Virus : MonoBehaviour
     public virtual void Follow(Transform target)
     {
         if (isDying) return;
-        Vector3 targetPos = new Vector3(player.transform.position.x,
-            player.transform.position.y + 1f,
-            player.transform.position.z);
+        Vector3 targetPos = new Vector3(target.position.x,
+            target.position.y + 1f,
+            target.position.z);
         navMeshAgent.SetDestination(targetPos);
 
         float distance =

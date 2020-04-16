@@ -3,9 +3,18 @@
 [CreateAssetMenu(fileName = "VirusProps", menuName = "ScriptableObjects/VirusScriptables/VirusProps")]
 public class VirusProps : ScriptableObject
 {
-    public float spotRange, attackRange,
-        movementSpeed, damage, attackCooldown,
-        restorationTime, turnSpeed;
+    [Header("Values")]
+    public float spotRange;
+    public float attackRange;
+    public float movementSpeed;
+    public float damage;
+    public float attackCooldown;
+    public float restorationTime;
+    public float turnSpeed;
+
+    [Header("Sounds")]
     public AudioClip deathSound;
+
+    [Header("Effects")]
     public ParticleSystem deathEffect;
 }

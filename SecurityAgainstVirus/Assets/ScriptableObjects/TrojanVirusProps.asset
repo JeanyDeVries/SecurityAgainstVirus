@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8f74cc1e631f514a945885e428c0e61, type: 3}
-  m_Name: MalVirusProps
+  m_Name: TrojanVirusProps
   m_EditorClassIdentifier: 
-  spotRange: 30
-  attackRange: 2
+  spotRange: 5
+  attackRange: 1
   movementSpeed: 5
   damage: 2
   attackCooldown: 3
