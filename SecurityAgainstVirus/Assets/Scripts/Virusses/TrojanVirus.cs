@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class TrojanVirus : Virus
 {
@@ -11,19 +12,26 @@ public class TrojanVirus : Virus
     private GameObject malwareModel;
 
     private GameObject currentModel;
+    private int counter = 0;
 
     public override void Awake()
     {
         currentModel = Instantiate(humanModel, transform.position, transform.rotation) as GameObject;
         currentModel.transform.parent = transform;
+
+        base.Awake();
     }
 
     public override void Follow(Transform target)
     {
+        IEnumerator couritine = base.WaitingForDeath();
+        StartCoroutine(couritine);
+
         //Reveal itself
-        GameObject thisModel = Instantiate(malwareModel, transform.position, transform.rotation) as GameObject;
-        Destroy(currentModel);
-        thisModel.transform.parent = transform;
-        currentModel = thisModel;
+        if (counter == 0f)
+        {
+            Instantiate(malwareModel, transform.position, transform.rotation);
+            counter++;
+        }
     }
 }

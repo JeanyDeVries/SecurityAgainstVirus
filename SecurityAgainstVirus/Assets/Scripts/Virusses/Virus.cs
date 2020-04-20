@@ -7,6 +7,7 @@ public class Virus : MonoBehaviour
     public VirusProps properties;
 
     private float elapsedTime;
+    private int counter = 0;
     private bool isDying;
     private GameObject player;
     private AudioSource audioSource;
@@ -93,12 +94,19 @@ public class Virus : MonoBehaviour
     {
         isDying = true;
 
-        audioSource.Play();
-        ParticleSystem deathEffect = Instantiate(properties.deathEffect, transform.position, Quaternion.identity);
-        deathEffect.Play();
+        ParticleSystem deathEffect = null;
+        if (counter == 0)
+        {
+            audioSource.Play();
+            deathEffect = Instantiate(properties.deathEffect, transform.position, Quaternion.identity);
+            deathEffect.Play();
+            counter++;
+        }
 
         yield return new WaitForSeconds(audioSource.clip.length);
         Die();
+        Destroy(deathEffect);
+        counter = 0;
     }
 
     private void OnCollisionEnter(Collision collision)
