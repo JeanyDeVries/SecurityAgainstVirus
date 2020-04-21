@@ -22,7 +22,7 @@ public class RansomwareVirus : Virus
 
     private void DrainMoney()
     {
-        Player.playerProps.money -= (int)(drainAmount * (timer/100));
+        Player.playerProps.money -= (int)drainAmount;
     }
 
     public override void Update()
@@ -39,4 +39,12 @@ public class RansomwareVirus : Virus
         if (collision.gameObject.tag == "Player")
             timer = 0f;
     }
+
+    public override void Follow(Transform target)
+    {
+        base.Follow(target);
+
+        //timer = 0f;
+    }
+
 }
