@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: RansomVirusProps
   m_EditorClassIdentifier: 
   spotRange: 30
-  attackRange: 1
+  attackRange: 10
   movementSpeed: 5
-  damage: 2
-  attackCooldown: 3
+  damage: 0
+  attackCooldown: 5
   restorationTime: 3
   turnSpeed: 2
   deathSound: {fileID: 8300000, guid: bbb778d96f99d4c4491b546e4d2a0f8d, type: 3}

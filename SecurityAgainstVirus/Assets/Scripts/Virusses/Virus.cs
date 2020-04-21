@@ -109,7 +109,7 @@ public class Virus : MonoBehaviour
         counter = 0;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public virtual void OnCollisionEnter(Collision collision)
     {
         IEnumerator couritine = RestoreForceAfterTime();
         StartCoroutine(couritine);
