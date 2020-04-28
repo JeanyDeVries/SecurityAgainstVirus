@@ -13,12 +13,6 @@ public class AdwareVirus : Virus
 
     private List<GameObject> ads = new List<GameObject>();
 
-    private void Start()
-    {
-        NavMeshAgent navMeshAgent = GetComponent<NavMeshAgent>();
-        navMeshAgent.baseOffset = transform.position.y;
-    }
-
     public override void DealDamage(Transform target)
     {
         //Puke ads that deal damage

@@ -109,14 +109,14 @@ NavMeshSettings:
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
-    ledgeDropHeight: 0
+    ledgeDropHeight: 10
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    accuratePlacement: 1
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 24c3e5c7f685f4a4c989b97a592da49c, type: 2}
@@ -612,7 +612,7 @@ PrefabInstance:
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
@@ -698,7 +698,7 @@ PrefabInstance:
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.14
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
@@ -1207,7 +1207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1151176221}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.74, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4890655216381232479}
@@ -1246,7 +1246,7 @@ PrefabInstance:
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.14
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
@@ -1529,7 +1529,7 @@ PrefabInstance:
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.36
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
@@ -1604,7 +1604,7 @@ PrefabInstance:
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
         type: 3}
@@ -1685,7 +1685,7 @@ PrefabInstance:
     - target: {fileID: 5281507522568423654, guid: ec9062570d4552648b35328228575e9f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.064
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5281507522568423654, guid: ec9062570d4552648b35328228575e9f,
         type: 3}
@@ -1754,7 +1754,7 @@ PrefabInstance:
     - target: {fileID: 2440129617772127117, guid: 81b935081456cfc48825072c497345e3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.99
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2440129617772127117, guid: 81b935081456cfc48825072c497345e3,
         type: 3}
@@ -2008,7 +2008,7 @@ PrefabInstance:
     - target: {fileID: 2964238819441124753, guid: 6474aa4167fcbb542b8344023620e575,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.69
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2964238819441124753, guid: 6474aa4167fcbb542b8344023620e575,
         type: 3}

@@ -147,7 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   properties: {fileID: 11400000, guid: 279eeed02e0b3034d808c1e990b414ee, type: 2}
-  secondsForDraining: 5
   drainAmount: 1
 --- !u!195 &8248484975347334957
 NavMeshAgent:
@@ -185,7 +184,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!135 &2440129617772127115
 SphereCollider:
