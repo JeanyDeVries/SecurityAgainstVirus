@@ -127,6 +127,8 @@ public class Virus : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(targetForward);
         Quaternion currentRotation = transform.rotation;
 
+        this.gameObject.GetComponent<NavMeshAgent>().enabled = true;
+
         float t = 0.0f;
         while (t < 1.0f)
         {

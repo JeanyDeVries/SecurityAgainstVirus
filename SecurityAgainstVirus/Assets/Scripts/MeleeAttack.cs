@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.AI;
 
 public class MeleeAttack : MonoBehaviour
 {
@@ -16,6 +16,7 @@ public class MeleeAttack : MonoBehaviour
     {
         if (AnimationHands.isPunching && collision.gameObject.tag == "Enemy")
         {
+            collision.gameObject.GetComponent<NavMeshAgent>().enabled = false;
             PushBack(collision.gameObject);
         }
     }

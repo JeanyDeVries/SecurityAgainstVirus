@@ -673,6 +673,80 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8511279693709567864}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &695565939
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1151176222}
+    m_Modifications:
+    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_Name
+      value: MalwareVirus (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.929999
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.4099998
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b61c254c0badcfe4bbe59b4f76fc5202, type: 3}
 --- !u!1 &711847910
 GameObject:
   m_ObjectHideFlags: 0
@@ -1142,6 +1216,8 @@ Transform:
   - {fileID: 1290274487}
   - {fileID: 4597124655983809912}
   - {fileID: 3211268404661374911}
+  - {fileID: 2032679554}
+  - {fileID: 1673914742}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1391,6 +1467,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544231947}
   m_CullTransparentMesh: 0
+--- !u!4 &1673914742 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+    type: 3}
+  m_PrefabInstance: {fileID: 695565939}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1752014587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,11 +1584,86 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1786907227}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1938260267
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1151176222}
+    m_Modifications:
+    - target: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_Name
+      value: MalwareVirus (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b61c254c0badcfe4bbe59b4f76fc5202, type: 3}
 --- !u!4 &1967398106 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8511279693301370752, guid: 708fa0b42f2eef74cb85f838705d7643,
     type: 3}
   m_PrefabInstance: {fileID: 107326158}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2032679554 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7952566512237892369, guid: b61c254c0badcfe4bbe59b4f76fc5202,
+    type: 3}
+  m_PrefabInstance: {fileID: 1938260267}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &762434460161281465
 PrefabInstance:
@@ -1978,6 +2135,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Firewall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933149152, guid: 4b1780c5a8a398c4eaf27385a903b2ed, type: 3}
+      propertyPath: m_Carve
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b1780c5a8a398c4eaf27385a903b2ed, type: 3}

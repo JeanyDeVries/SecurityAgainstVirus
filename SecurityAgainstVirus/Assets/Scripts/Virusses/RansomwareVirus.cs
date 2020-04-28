@@ -16,8 +16,6 @@ public class RansomwareVirus : Virus
 
         if(timer >= properties.attackCooldown)
             DrainMoney();
-
-        Debug.Log(timer);
     }
 
     private void DrainMoney()
