@@ -33,28 +33,21 @@ public class Virus : MonoBehaviour
 
         if (hitColliders == null) return;
 
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit))
-        {
-            float distance = Vector3.Distance(hit.transform.position, transform.position);
-
-            if(hit.transform.gameObject.tag == "Player")
-            {
-                
-            }
-            else if (hit.transform.gameObject.tag == "Wall")
-            {
-                if(navMeshAgent != null)
-                    navMeshAgent.SetDestination(transform.position);
-                return;
-            }
-        }
-
         for (int i = 0; i < hitColliders.Length; i++)
         {
-            if (hitColliders[i].tag == "Player")
+            Vector3 dirToTarget = (player.transform.position - transform.position).normalized;
+            float dstToTarget = Vector3.Distance(player.transform.position, transform.position);
+            if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, LayerMask.GetMask("Wall")))
             {
-                Follow(hitColliders[i].transform);
+                if (hitColliders[i].tag == "Player")
+                {
+                    Follow(hitColliders[i].transform);
+                }
+            }
+            else
+            {
+                if (navMeshAgent != null && navMeshAgent.enabled == true)
+                    navMeshAgent.SetDestination(transform.position);
             }
         }
     }
