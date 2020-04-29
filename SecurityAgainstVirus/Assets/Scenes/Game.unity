@@ -1960,6 +1960,11 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 2668389930970310194, guid: bf7ea57936eb9e040988626a6b37e5fe,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2668389931014001172, guid: bf7ea57936eb9e040988626a6b37e5fe,
         type: 3}
       propertyPath: m_Radius
@@ -1973,12 +1978,12 @@ PrefabInstance:
     - target: {fileID: 2668389931014001172, guid: bf7ea57936eb9e040988626a6b37e5fe,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2668389932111488400, guid: bf7ea57936eb9e040988626a6b37e5fe,
         type: 3}
       propertyPath: knockBackAmount
-      value: 100
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf7ea57936eb9e040988626a6b37e5fe, type: 3}

@@ -45,7 +45,9 @@ public class Virus : MonoBehaviour
         Vector3 targetPos = new Vector3(target.position.x,
             target.position.y + 1f,
             target.position.z);
-        navMeshAgent.SetDestination(targetPos);
+
+        if (navMeshAgent.enabled == true)
+            navMeshAgent.SetDestination(targetPos);
 
         float distance =
             Vector3.Distance(transform.position, target.position);
@@ -60,7 +62,8 @@ public class Virus : MonoBehaviour
     public virtual void CheckIfInAttackDistance(Transform target)
     {
         elapsedTime += Time.deltaTime;
-        navMeshAgent.SetDestination(transform.position);
+        if(navMeshAgent.enabled == true)
+            navMeshAgent.SetDestination(transform.position);
 
         float distance =
             Vector3.Distance(transform.position, target.position);

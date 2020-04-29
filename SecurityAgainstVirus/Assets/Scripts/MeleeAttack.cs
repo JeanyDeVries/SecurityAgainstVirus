@@ -12,7 +12,7 @@ public class MeleeAttack : MonoBehaviour
         virus.GetComponent<Rigidbody>().AddForce(distance.normalized * -knockBackAmount);
     }
 
-    void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (AnimationHands.isPunching && collision.gameObject.tag == "Enemy")
         {
