@@ -32,10 +32,30 @@ public class Virus : MonoBehaviour
             Physics.OverlapSphere(transform.position, properties.spotRange);
 
         if (hitColliders == null) return;
+
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit))
+        {
+            float distance = Vector3.Distance(hit.transform.position, transform.position);
+
+            if(hit.transform.gameObject.tag == "Player")
+            {
+                
+            }
+            else if (hit.transform.gameObject.tag == "Wall")
+            {
+                if(navMeshAgent != null)
+                    navMeshAgent.SetDestination(transform.position);
+                return;
+            }
+        }
+
         for (int i = 0; i < hitColliders.Length; i++)
         {
             if (hitColliders[i].tag == "Player")
+            {
                 Follow(hitColliders[i].transform);
+            }
         }
     }
 
