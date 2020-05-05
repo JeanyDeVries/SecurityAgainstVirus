@@ -3,7 +3,7 @@
 [RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
 {
-    [SerializeField, Range(0f, 100f)]
+    [SerializeField, Range(0f, 50f)]
     private float rotationSpeed, movementSpeed;
 
     [SerializeField]
@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     private Rigidbody rb;
     private bool onGround;
-    private Vector3 velocity;
+    private Vector3 velocity, position;
 
     private void Awake()
     {
@@ -56,13 +56,14 @@ public class Player : MonoBehaviour
         playerInput.x = Input.GetAxis("Horizontal");
         playerInput.y = Input.GetAxis("Vertical");
         playerInput = Vector2.ClampMagnitude(playerInput, 1f);
-
         playerInput *= Time.deltaTime;
 
-        transform.Rotate(0, playerInput.x * rotationSpeed, 0);
         transform.Translate(0, 0, playerInput.y * movementSpeed);
-    }
 
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Quaternion targetRotation = Quaternion.LookRotation(ray.direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
