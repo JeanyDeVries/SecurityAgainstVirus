@@ -4,7 +4,7 @@
 public class Player : MonoBehaviour
 {
     [SerializeField, Range(0f, 50f)]
-    private float rotationSpeed, movementSpeed;
+    private float movementSpeed;
 
     [SerializeField]
     private float maxHealth, startMoney, jumpHeight;
@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     private Rigidbody rb;
     private bool onGround;
-    private Vector3 velocity, position;
+    private Vector3 velocity;
 
     private void Awake()
     {
@@ -23,13 +23,14 @@ public class Player : MonoBehaviour
 
         playerProps.health = maxHealth;
         playerProps.money = startMoney;
+        Cursor.lockState = CursorLockMode.Locked;
 
         healthBar.SetMaxHealth(maxHealth);
     }
 
     private void Update()
     {
-        Move();
+        MoveForward();
     }
 
     private void FixedUpdate()
@@ -50,7 +51,7 @@ public class Player : MonoBehaviour
         rb.velocity = velocity;
     }
 
-    private void Move()
+    private void MoveForward()
     {
         Vector2 playerInput;
         playerInput.x = Input.GetAxis("Horizontal");
@@ -59,10 +60,6 @@ public class Player : MonoBehaviour
         playerInput *= Time.deltaTime;
 
         transform.Translate(0, 0, playerInput.y * movementSpeed);
-
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Quaternion targetRotation = Quaternion.LookRotation(ray.direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision collision)
