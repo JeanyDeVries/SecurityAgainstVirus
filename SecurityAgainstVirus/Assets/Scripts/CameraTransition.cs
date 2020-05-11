@@ -8,6 +8,13 @@ public class CameraTransition : MonoBehaviour
     [SerializeField]
     private Transform targetPoint;
 
+    private Transform player;
+
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
     void Update()
     {
         Collider[] hitColliders =
@@ -22,7 +29,19 @@ public class CameraTransition : MonoBehaviour
                 Camera.main.transform.position = 
                     Vector3.Slerp(Camera.main.transform.position, targetPoint.position, zoomInSpeed * Time.deltaTime);
 
+                Cursor.lockState = CursorLockMode.None;
             }
+
+            float distance = Vector3.Distance(Camera.main.transform.position, transform.position);
+            if(distance >= range)
+                Reset();
         }
+    }
+
+    void Reset()
+    {
+        Debug.Log("Reset");
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }

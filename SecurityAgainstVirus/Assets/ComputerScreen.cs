@@ -58,11 +58,17 @@ public class ComputerScreen : MonoBehaviour
 
     void CorrectAnswer()
     {
+        Debug.Log("Correct");
 
+        //Open door
     }
 
     void WrongAnswer()
     {
+        Debug.Log("Wrong");
 
+        //Reduce player health
+
+        Player.playerProps.health -= 10f;
     }
 }
