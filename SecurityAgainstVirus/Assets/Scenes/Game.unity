@@ -2324,6 +2324,88 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1938260267}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2101414158
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2101414160}
+  - component: {fileID: 2101414159}
+  m_Layer: 0
+  m_Name: QuestionManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2101414159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101414158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb942a1a6c7f4ab42a60ecd8da246b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questions:
+  - question: Which of the following is not a transport layer vulnerability?
+    answers:
+    - Mishandling of undefined, poorly defined
+    - "The Vulnerability that allows \u201Cfingerprinting\u201D & other enumeration
+      of host information"
+    - Overloading of transport-layer mechanisms
+    - Unauthorized network access
+    correctAnswer: Unauthorized network access
+  - question: Which of the following is not session layer vulnerability?
+    answers:
+    - Mishandling of undefined, poorly defined
+    - Spoofing and hijacking of data based on failed authentication attempts
+    - Passing of session-credentials allowing intercept and unauthorized use
+    - Weak or non-existent authentication mechanisms
+    correctAnswer: Mishandling of undefined, poorly defined
+  - question: Failed sessions allow brute-force attacks on access credentials. This
+      type of attacks are done in which layer of the OSI model?
+    answers:
+    - Physical layer
+    - Data-link Layer
+    - Session layer
+    - Presentation layer
+    correctAnswer: Session layer
+  - question: Which of the following is not an example of presentation layer issues?
+    answers:
+    - Poor handling of unexpected input can lead to the execution of arbitrary instructions
+    - Unintentional or ill-directed use of superficially supplied input
+    - Cryptographic flaws in the system may get exploited to evade privacy
+    - Weak or non-existent authentication mechanisms
+    correctAnswer: Weak or non-existent authentication mechanisms
+  - question: Which of the following is not a vulnerability of the application layer?
+    answers:
+    - Application design bugs may bypass security controls
+    - "Inadequate security controls force \u201Call-or-nothing\u201D approach"
+    - Logical bugs in programs may be by chance or on purpose be used for crashing
+      programs
+    - Overloading of transport-layer mechanisms
+    correctAnswer: Overloading of transport-layer mechanisms
+--- !u!4 &2101414160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101414158}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15.792042, y: -17.384224, z: 29.831728}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2145619093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2715,6 +2797,10 @@ PrefabInstance:
       propertyPath: questions.Array.data[3].answers.Array.data[3]
       value: 44
       objectReference: {fileID: 0}
+    - target: {fileID: 528476606, guid: ad185b34553d69c49ab94c92e03e2b03, type: 3}
+      propertyPath: questionManager
+      value: 
+      objectReference: {fileID: 2101414159}
     - target: {fileID: 993387361665202240, guid: ad185b34553d69c49ab94c92e03e2b03,
         type: 3}
       propertyPath: m_FontData.m_FontSize

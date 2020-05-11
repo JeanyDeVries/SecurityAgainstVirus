@@ -1,21 +1,18 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Linq;
-using UnityEngine.EventSystems;
 
 public class ComputerScreen : MonoBehaviour
 {
+    [SerializeField]
+    private QuestionManager questionManager;
+
     [SerializeField]
     private Text questionTxt;
 
     [SerializeField]
     private List <Button> answerButtons;
 
-    [SerializeField]
-    private Question[] questions;
-
-    private static List<Question> unansweredQuestions;
     private List<string> answers;
 
     private Question currentQuestion;
@@ -23,10 +20,7 @@ public class ComputerScreen : MonoBehaviour
 
     void Start()
     {
-        if(unansweredQuestions == null || unansweredQuestions.Count == 0)
-        {
-            unansweredQuestions = questions.ToList<Question>();
-        }
+        questionManager.SetQuestions();
 
         GetRandomQuestion();
 
@@ -39,8 +33,10 @@ public class ComputerScreen : MonoBehaviour
 
     void GetRandomQuestion()
     {
-        int randomQuestionIndex = Random.Range(0, unansweredQuestions.Count);
-        currentQuestion = unansweredQuestions[randomQuestionIndex];
+        Debug.Log("unanswered questions : " + QuestionManager.unansweredQuestions);
+
+        int randomQuestionIndex = Random.Range(0, QuestionManager.unansweredQuestions.Count);
+        currentQuestion = QuestionManager.unansweredQuestions[randomQuestionIndex];
 
         answers = currentQuestion.answers;
         for (int i = 0; i < answers.Count; i++)
@@ -50,7 +46,7 @@ public class ComputerScreen : MonoBehaviour
 
         SetText();
 
-        unansweredQuestions.RemoveAt(randomQuestionIndex);
+        QuestionManager.unansweredQuestions.RemoveAt(randomQuestionIndex);
     }
 
     void SetText()
@@ -101,6 +97,7 @@ public class ComputerScreen : MonoBehaviour
 
         Player.playerProps.health -= 10f;
         isAnswered = false;
+        questionManager.SetQuestions();
         Start();
     }
 }
