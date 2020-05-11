@@ -13,10 +13,15 @@ public class ComputerScreen : MonoBehaviour
     [SerializeField]
     private List <Button> answerButtons;
 
+    [SerializeField]
+    private GameObject door, computer,
+        textDisplay;
+
     private List<string> answers;
 
     private Question currentQuestion;
     private bool isAnswered = false;
+    private bool emissionFinished;
 
     void Start()
     {
@@ -31,10 +36,14 @@ public class ComputerScreen : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if(emissionFinished && door.GetComponent<DissolveSphere>().value >= 0.99f)
+            door.SetActive(false);
+    }
+
     void GetRandomQuestion()
     {
-        Debug.Log("unanswered questions : " + QuestionManager.unansweredQuestions);
-
         int randomQuestionIndex = Random.Range(0, QuestionManager.unansweredQuestions.Count);
         currentQuestion = QuestionManager.unansweredQuestions[randomQuestionIndex];
 
@@ -84,18 +93,18 @@ public class ComputerScreen : MonoBehaviour
 
     private void CorrectAnswer()
     {
-        Debug.Log("Correct");
+        door.GetComponent<DissolveSphere>().enabled = true;
+        computer.GetComponent<DissolveSphere>().enabled = true;
+        textDisplay.gameObject.SetActive(false);
 
-        //Open door
+        emissionFinished = true;
     }
 
     private void WrongAnswer()
     {
-        Debug.Log("Wrong");
-
         //Reduce player health
-
         Player.playerProps.health -= 10f;
+
         isAnswered = false;
         questionManager.SetQuestions();
         Start();

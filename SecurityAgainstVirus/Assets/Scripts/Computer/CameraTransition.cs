@@ -33,8 +33,6 @@ public class CameraTransition : MonoBehaviour
 
     void Reset()
     {
-        Debug.Log("Reset");
-
         Cursor.lockState = CursorLockMode.Locked;
     }
 }
