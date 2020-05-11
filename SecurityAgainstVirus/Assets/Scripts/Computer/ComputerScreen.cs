@@ -39,7 +39,10 @@ public class ComputerScreen : MonoBehaviour
     void Update()
     {
         if(emissionFinished && door.GetComponent<DissolveSphere>().value >= 0.99f)
+        {
             door.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     void GetRandomQuestion()

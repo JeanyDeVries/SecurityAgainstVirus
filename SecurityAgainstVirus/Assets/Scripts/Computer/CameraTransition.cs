@@ -26,7 +26,7 @@ public class CameraTransition : MonoBehaviour
             }
 
             float distance = Vector3.Distance(Camera.main.transform.position, transform.position);
-            if(distance >= range)
+            if(distance >= range && distance < range + 5f)
                 Reset();
         }
     }

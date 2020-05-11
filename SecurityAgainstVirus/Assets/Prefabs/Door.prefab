@@ -167,11 +167,21 @@ PrefabInstance:
       propertyPath: door
       value: 
       objectReference: {fileID: 891312249936701370}
+    - target: {fileID: 528476606, guid: 13db0b795570e514d9ca4d905d4abb93, type: 3}
+      propertyPath: textDisplay
+      value: 
+      objectReference: {fileID: 890409779559502948}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13db0b795570e514d9ca4d905d4abb93, type: 3}
 --- !u!4 &887701510070921020 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4270593417788664, guid: 13db0b795570e514d9ca4d905d4abb93,
+    type: 3}
+  m_PrefabInstance: {fileID: 891312250415963076}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &890409779559502948 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1633044860686240, guid: 13db0b795570e514d9ca4d905d4abb93,
     type: 3}
   m_PrefabInstance: {fileID: 891312250415963076}
   m_PrefabAsset: {fileID: 0}
