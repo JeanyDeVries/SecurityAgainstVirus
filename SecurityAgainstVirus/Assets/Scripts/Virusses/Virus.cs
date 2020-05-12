@@ -4,6 +4,7 @@ using UnityEngine.AI;
 
 public class Virus : MonoBehaviour
 {
+    [Header("Properties for the virus")]
     public VirusProps properties;
 
     private float elapsedTime;
