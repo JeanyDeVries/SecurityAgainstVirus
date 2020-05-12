@@ -1,14 +1,11 @@
 ﻿using System.Collections;
-using UnityEditor.UIElements;
 using UnityEngine;
 
 public class adsScript : MonoBehaviour
 {
-    [SerializeField]
-    private float damage, duration;
-
-    [SerializeField]
-    private AnimationCurve curve;
+    [Header("Properties that can be changed and balanced")]
+    [SerializeField] private float damage, duration;
+    [SerializeField] private AnimationCurve curve;
 
     private float time;
     private Vector3 start, end;
@@ -25,7 +22,7 @@ public class adsScript : MonoBehaviour
         end = targetPos;
     }
 
-    IEnumerator Curve()
+    private IEnumerator Curve()
     {
         while (time < duration)
         {

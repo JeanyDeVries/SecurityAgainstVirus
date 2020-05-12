@@ -15,7 +15,6 @@ public class Firewall : MonoBehaviour
         {
             other.GetComponent<Player>().isInFirewall = true;
         }
-
     }
 
     private void OnTriggerExit(Collider other)

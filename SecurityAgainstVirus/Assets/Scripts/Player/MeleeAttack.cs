@@ -3,8 +3,7 @@ using UnityEngine.AI;
 
 public class MeleeAttack : MonoBehaviour
 {
-    [SerializeField]
-    private float knockBackAmount;
+    [SerializeField] private float knockBackAmount;
 
     private void PushBack(GameObject virus)
     {

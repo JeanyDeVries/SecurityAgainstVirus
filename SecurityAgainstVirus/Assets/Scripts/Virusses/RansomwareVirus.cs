@@ -2,13 +2,9 @@
 
 public class RansomwareVirus : Virus
 {
-    //Drains points/money from the player when not killed or attacked in time
     [Header("Attributes for ransomware only")]
-    [SerializeField]
-    private float drainAmount;
-
-    [SerializeField]
-    private ParticleSystem drainEffect;
+    [SerializeField] private float drainAmount;
+    [SerializeField] private ParticleSystem drainEffect;
 
     private float timer;
     private ParticleSystem drainParticles;

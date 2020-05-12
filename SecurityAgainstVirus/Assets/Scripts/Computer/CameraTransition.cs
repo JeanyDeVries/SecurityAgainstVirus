@@ -2,13 +2,13 @@
 
 public class CameraTransition : MonoBehaviour
 {
-    [SerializeField]
-    private float range, zoomInSpeed;
+    [Header("Properties that can be changed and balanced")]
+    [SerializeField] private float range, zoomInSpeed;
 
-    [SerializeField]
-    private Transform targetPoint;
+    [Header("Additional properties")]
+    [SerializeField] private Transform targetPoint;
 
-    void Update()
+    private void Update()
     {
         Collider[] hitColliders =
             Physics.OverlapSphere(transform.position, range);
@@ -33,7 +33,7 @@ public class CameraTransition : MonoBehaviour
         }
     }
 
-    void Reset()
+    private void Reset()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }

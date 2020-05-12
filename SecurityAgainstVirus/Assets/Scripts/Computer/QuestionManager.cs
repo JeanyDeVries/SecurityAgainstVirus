@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class QuestionManager : MonoBehaviour
 {
-    [SerializeField]
-    private Question[] questions;
+    [Header("List of all the questions with answers")]
+    [SerializeField] private Question[] questions;
 
     public static List<Question> unansweredQuestions;
 

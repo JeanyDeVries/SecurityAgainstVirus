@@ -4,22 +4,14 @@ using UnityEngine.UI;
 
 public class ComputerScreen : MonoBehaviour
 {
-    [SerializeField]
-    private QuestionManager questionManager;
-
-    [SerializeField]
-    private float damage;
-
-    [SerializeField]
-    private GameObject door, computer,
+    [SerializeField] private QuestionManager questionManager;
+    [SerializeField] private float damage;
+    [SerializeField] private GameObject door, computer,
        textDisplay;
     
     [Header("UI properties")]
-    [SerializeField]
-    private Text questionTxt;
-
-    [SerializeField]
-    private List <Button> answerButtons;
+    [SerializeField] private Text questionTxt;
+    [SerializeField] private List <Button> answerButtons;
 
     private List<string> answers;
 
@@ -28,7 +20,7 @@ public class ComputerScreen : MonoBehaviour
     private bool isAnswered = false;
     private bool emissionFinished;
 
-    void Start()
+    private void Start()
     {
         if(player == null)
             player = GameObject.FindGameObjectWithTag("Player");
@@ -43,7 +35,7 @@ public class ComputerScreen : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
         if(emissionFinished && door.GetComponent<DissolveSphere>().value >= 0.99f)
         {
@@ -52,7 +44,7 @@ public class ComputerScreen : MonoBehaviour
         }
     }
 
-    void GetRandomQuestion()
+    private void GetRandomQuestion()
     {
         int randomQuestionIndex = Random.Range(0, QuestionManager.unansweredQuestions.Count);
         currentQuestion = QuestionManager.unansweredQuestions[randomQuestionIndex];
@@ -68,7 +60,7 @@ public class ComputerScreen : MonoBehaviour
         QuestionManager.unansweredQuestions.RemoveAt(randomQuestionIndex);
     }
 
-    void SetText()
+    private void SetText()
     {
         answers = ShuffleList.ShuffleListItems<string>(currentQuestion.answers);
 
@@ -80,7 +72,7 @@ public class ComputerScreen : MonoBehaviour
         }
     }
 
-    void OnClick(Button btn)
+    private void OnClick(Button btn)
     {
         if (!isAnswered)
         {

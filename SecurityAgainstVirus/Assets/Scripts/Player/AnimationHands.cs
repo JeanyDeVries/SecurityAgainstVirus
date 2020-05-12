@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-
 public class AnimationHands : MonoBehaviour
 {
     private Animator animator;

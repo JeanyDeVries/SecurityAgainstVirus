@@ -3,13 +3,9 @@ using UnityEngine;
 
 public class TrojanVirus : Virus
 {
-    //Disguise as a human but when approached closed changes to malware virus
     [Header("Models")]
-    [SerializeField]
-    private GameObject humanModel;
-
-    [SerializeField]
-    private GameObject malwareModel;
+    [SerializeField] private GameObject humanModel;
+    [SerializeField] private GameObject malwareModel;
 
     private GameObject currentModel;
     private int counter = 0;
@@ -29,7 +25,6 @@ public class TrojanVirus : Virus
 
         Destroy(currentModel);
 
-        //Reveal itself
         if (counter == 0f)
         {
             Instantiate(malwareModel, transform.position, transform.rotation);
