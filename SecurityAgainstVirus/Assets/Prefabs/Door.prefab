@@ -168,6 +168,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 891312249936701370}
     - target: {fileID: 528476606, guid: 13db0b795570e514d9ca4d905d4abb93, type: 3}
+      propertyPath: computer
+      value: 
+      objectReference: {fileID: 890506051622218782}
+    - target: {fileID: 528476606, guid: 13db0b795570e514d9ca4d905d4abb93, type: 3}
       propertyPath: textDisplay
       value: 
       objectReference: {fileID: 890409779559502948}
@@ -176,6 +180,12 @@ PrefabInstance:
 --- !u!4 &887701510070921020 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4270593417788664, guid: 13db0b795570e514d9ca4d905d4abb93,
+    type: 3}
+  m_PrefabInstance: {fileID: 891312250415963076}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &890506051622218782 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1448391162230746, guid: 13db0b795570e514d9ca4d905d4abb93,
     type: 3}
   m_PrefabInstance: {fileID: 891312250415963076}
   m_PrefabAsset: {fileID: 0}

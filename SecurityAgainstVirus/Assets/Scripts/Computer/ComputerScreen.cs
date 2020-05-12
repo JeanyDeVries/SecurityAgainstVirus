@@ -8,25 +8,32 @@ public class ComputerScreen : MonoBehaviour
     private QuestionManager questionManager;
 
     [SerializeField]
+    private float damage;
+
+    [SerializeField]
+    private GameObject door, computer,
+       textDisplay;
+    
+    [Header("UI properties")]
+    [SerializeField]
     private Text questionTxt;
 
     [SerializeField]
     private List <Button> answerButtons;
 
-    [SerializeField]
-    private GameObject door, computer,
-        textDisplay;
-
     private List<string> answers;
 
     private Question currentQuestion;
+    private GameObject player;
     private bool isAnswered = false;
     private bool emissionFinished;
 
     void Start()
     {
-        questionManager.SetQuestions();
+        if(player == null)
+            player = GameObject.FindGameObjectWithTag("Player");
 
+        questionManager.SetQuestions();
         GetRandomQuestion();
 
         for (int i = 0; i < answerButtons.Count; i++)
@@ -105,7 +112,8 @@ public class ComputerScreen : MonoBehaviour
 
     private void WrongAnswer()
     {
-        //Reduce player health
+        Player.playerProps.health -= damage;
+        player.GetComponent<Player>().healthBar.SetHealth(Player.playerProps.health);
 
         isAnswered = false;
         questionManager.SetQuestions();
