@@ -21,6 +21,8 @@ public class CameraTransition : MonoBehaviour
             {
                 Camera.main.transform.position = 
                     Vector3.Slerp(Camera.main.transform.position, targetPoint.position, zoomInSpeed * Time.deltaTime);
+                if(Camera.main.transform.position == targetPoint.position)
+                    hitColliders[i].gameObject.transform.position = targetPoint.position;
 
                 Cursor.lockState = CursorLockMode.None;
             }
