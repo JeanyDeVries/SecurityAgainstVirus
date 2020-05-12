@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Firewall : MonoBehaviour
@@ -10,7 +9,20 @@ public class Firewall : MonoBehaviour
         {
             IEnumerator couritine = other.GetComponent<Virus>().WaitingForDeath();
             StartCoroutine(couritine);
-            //other.GetComponent<Virus>().Die();
+        }
+
+        if (other.gameObject.tag == "Player")
+        {
+            other.GetComponent<Player>().isInFirewall = true;
+        }
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            other.GetComponent<Player>().isInFirewall = false;
         }
     }
 }

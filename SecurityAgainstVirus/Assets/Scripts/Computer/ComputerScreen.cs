@@ -106,7 +106,6 @@ public class ComputerScreen : MonoBehaviour
     private void WrongAnswer()
     {
         //Reduce player health
-        Player.playerProps.health -= 10f;
 
         isAnswered = false;
         questionManager.SetQuestions();

@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     private bool onGround;
     private Vector3 velocity;
 
+    public bool isInFirewall;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();

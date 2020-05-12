@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class RansomwareVirus : Virus
 {
@@ -14,8 +12,11 @@ public class RansomwareVirus : Virus
     {
         base.CheckIfInAttackDistance(target);
 
-        if(timer >= properties.attackCooldown)
+        bool isPlayerInFirewall = target.GetComponent<Player>().isInFirewall;
+        if (!isPlayerInFirewall && timer >= properties.attackCooldown)
             DrainMoney();
+        else if (isPlayerInFirewall)
+            timer = 0f;
     }
 
     private void DrainMoney()
@@ -37,12 +38,4 @@ public class RansomwareVirus : Virus
         if (collision.gameObject.tag == "Player")
             timer = 0f;
     }
-
-    public override void Follow(Transform target)
-    {
-        base.Follow(target);
-
-        //timer = 0f;
-    }
-
 }
