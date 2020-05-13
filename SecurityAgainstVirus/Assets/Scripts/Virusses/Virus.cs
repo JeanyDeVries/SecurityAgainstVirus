@@ -11,14 +11,21 @@ public class Virus : MonoBehaviour
     private int counter = 0;
     private bool isDying;
     private GameObject player;
-    private AudioSource audioSource;
+    private AudioSource audioSourceAttack;
+    private AudioSource audioSourceDeath;
     private NavMeshAgent navMeshAgent;
 
     public virtual void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         navMeshAgent = GetComponent<NavMeshAgent>();
-        audioSource = GetComponent<AudioSource>();
+
+        audioSourceAttack = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
+        audioSourceAttack.clip = properties.attackSound;
+
+        audioSourceDeath = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
+        audioSourceDeath.clip = properties.deathSound;
+        audioSourceDeath.volume = 0.5f;
     }
 
     public virtual void Update()
@@ -96,8 +103,7 @@ public class Virus : MonoBehaviour
     public virtual void DealDamage(Transform target)
     {
         //Play attack animation + sound
-        audioSource.clip = properties.attackSound;
-        audioSource.Play();
+        audioSourceAttack.Play();
 
         Player.playerProps.health -= properties.damage;
         target.GetComponent<Player>().healthBar.SetHealth(Player.playerProps.health);
@@ -115,14 +121,13 @@ public class Virus : MonoBehaviour
         ParticleSystem deathEffect = null;
         if (counter == 0)
         {
-            audioSource.clip = properties.deathSound;
-            audioSource.Play();
+            audioSourceDeath.Play();
             deathEffect = Instantiate(properties.deathEffect, transform.position, Quaternion.identity);
             deathEffect.Play();
             counter++;
         }
 
-        yield return new WaitForSeconds(audioSource.clip.length);
+        yield return new WaitForSeconds(audioSourceDeath.clip.length);
         Die();
         Destroy(deathEffect);
         counter = 0;
