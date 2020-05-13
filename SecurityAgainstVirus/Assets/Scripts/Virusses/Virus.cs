@@ -19,7 +19,6 @@ public class Virus : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         navMeshAgent = GetComponent<NavMeshAgent>();
         audioSource = GetComponent<AudioSource>();
-        audioSource.clip = properties.deathSound;
     }
 
     public virtual void Update()
@@ -97,6 +96,8 @@ public class Virus : MonoBehaviour
     public virtual void DealDamage(Transform target)
     {
         //Play attack animation + sound
+        audioSource.clip = properties.attackSound;
+        audioSource.Play();
 
         Player.playerProps.health -= properties.damage;
         target.GetComponent<Player>().healthBar.SetHealth(Player.playerProps.health);
@@ -114,6 +115,7 @@ public class Virus : MonoBehaviour
         ParticleSystem deathEffect = null;
         if (counter == 0)
         {
+            audioSource.clip = properties.deathSound;
             audioSource.Play();
             deathEffect = Instantiate(properties.deathEffect, transform.position, Quaternion.identity);
             deathEffect.Play();

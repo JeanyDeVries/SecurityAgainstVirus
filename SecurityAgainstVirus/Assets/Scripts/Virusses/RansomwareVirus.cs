@@ -5,10 +5,22 @@ public class RansomwareVirus : Virus
     [Header("Attributes for ransomware only")]
     [SerializeField] private float drainAmount;
     [SerializeField] private ParticleSystem drainEffect;
+    [SerializeField] private AudioClip drainSound;
 
     private float timer;
+    private AudioSource drainAudioSource;
     private ParticleSystem drainParticles;
     private bool canSpawnParticles = true;
+
+    public override void Awake()
+    {
+        base.Awake();
+
+        drainAudioSource = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
+        drainAudioSource.clip = drainSound;
+        drainAudioSource.loop = true;
+        drainAudioSource.volume = 0.5f;
+    }
 
     public override void CheckIfInAttackDistance(Transform target) 
     {
@@ -24,8 +36,10 @@ public class RansomwareVirus : Virus
     private void DrainMoney()
     {
         if(canSpawnParticles)
+        {
             drainParticles = Instantiate(drainEffect, transform.position, Quaternion.identity, this.transform);
-        drainParticles.Play();
+            drainAudioSource.Play();
+        }
         canSpawnParticles = false;
         Player.playerProps.money -= (int)drainAmount;
     }
@@ -45,11 +59,26 @@ public class RansomwareVirus : Virus
             Reset();
     }
 
+    public override void Follow(Transform target)
+    {
+        base.Follow(target);
+
+        float distance =
+            Vector3.Distance(transform.position, target.position);
+        if(distance > properties.attackRange)
+            Reset();
+    }
+
     private void Reset()
     {
         timer = 0.0f;
-        drainParticles.Stop();
         canSpawnParticles = true;
-        Destroy(drainParticles); 
+        drainAudioSource.Stop();
+        Destroy(drainParticles);
+    }
+
+    public override void DealDamage(Transform target)
+    {
+        
     }
 }

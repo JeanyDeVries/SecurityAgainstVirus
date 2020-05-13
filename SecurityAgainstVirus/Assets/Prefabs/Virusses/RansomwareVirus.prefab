@@ -150,6 +150,7 @@ MonoBehaviour:
   drainAmount: 1
   drainEffect: {fileID: 2442140149446390078, guid: 9ee8d7c7c979f594582b8d1d8c480a8b,
     type: 3}
+  drainSound: {fileID: 8300000, guid: a836b2f92d05ba54b852640affc906b8, type: 3}
 --- !u!195 &8248484975347334957
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -261,16 +262,16 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: bbb778d96f99d4c4491b546e4d2a0f8d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

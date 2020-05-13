@@ -14,6 +14,7 @@ public class VirusProps : ScriptableObject
 
     [Header("Sounds")]
     public AudioClip deathSound;
+    public AudioClip attackSound;
 
     [Header("Effects")]
     public ParticleSystem deathEffect;
