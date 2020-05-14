@@ -77,10 +77,6 @@ public class Virus : MonoBehaviour
     {
         if (isDying) return;
 
-        animator.SetBool("Idle", false);
-        animator.SetBool("Attack", false);
-        animator.SetBool("Follow", true);
-
         Vector3 targetPos = new Vector3(target.position.x,
             target.position.y + 1f,
             target.position.z);
@@ -95,6 +91,12 @@ public class Virus : MonoBehaviour
             elapsedTime += Time.deltaTime;
             CheckIfInAttackDistance(target);
             return;
+        }
+        else
+        {
+            animator.SetBool("Idle", false);
+            animator.SetBool("Attack", false);
+            animator.SetBool("Follow", true);
         }
     }
 
@@ -121,6 +123,10 @@ public class Virus : MonoBehaviour
 
     public virtual void DealDamage(Transform target)
     {
+        Vector3 targetForward = (player.transform.position - transform.position);
+        targetForward.Normalize();
+        Quaternion targetRotation = Quaternion.LookRotation(targetForward);
+
         //Play attack animation + sound
         animator.SetBool("Idle", false);
         animator.SetBool("Attack", true);
