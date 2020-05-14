@@ -20,7 +20,6 @@ MonoBehaviour:
   restorationTime: 3
   turnSpeed: 2
   deathSound: {fileID: 8300000, guid: bbb778d96f99d4c4491b546e4d2a0f8d, type: 3}
-  attackSound: {fileID: 7240653242970026674, guid: 9eb24a99b21a4614ca112b4230fc5e0c,
-    type: 3}
+  attackSound: {fileID: 8300000, guid: 0a9064911b052124da4f27e178bce252, type: 3}
   deathEffect: {fileID: 2442140149446390078, guid: b1eda96a34d606d4882629348ae70bbb,
     type: 3}

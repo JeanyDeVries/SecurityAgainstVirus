@@ -3,13 +3,14 @@
 [RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
 {
+    public static PlayerProps playerProps;
+
     [Header("Properties that can be changed and balanced")]
     [SerializeField, Range(0f, 50f)] private float movementSpeed;
     [SerializeField] private float maxHealth, 
         startMoney, jumpHeight;
 
     [Header("Objects that needs to be dragged in the inspector")]
-    public static PlayerProps playerProps;
     public HealthBar healthBar;
 
     [Header("Properties that needs to be accessed by other scripts")]
@@ -26,6 +27,7 @@ public class Player : MonoBehaviour
 
         playerProps.health = maxHealth;
         playerProps.money = startMoney;
+        playerProps.healthBar = healthBar;
         Cursor.lockState = CursorLockMode.Locked;
 
         healthBar.SetMaxHealth(maxHealth);

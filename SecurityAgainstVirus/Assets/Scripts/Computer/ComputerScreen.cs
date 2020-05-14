@@ -16,15 +16,11 @@ public class ComputerScreen : MonoBehaviour
     private List<string> answers;
 
     private Question currentQuestion;
-    private GameObject player;
     private bool isAnswered = false;
     private bool emissionFinished;
 
     private void Start()
     {
-        if(player == null)
-            player = GameObject.FindGameObjectWithTag("Player");
-
         questionManager.SetQuestions();
         GetRandomQuestion();
 
@@ -105,7 +101,7 @@ public class ComputerScreen : MonoBehaviour
     private void WrongAnswer()
     {
         Player.playerProps.health -= damage;
-        player.GetComponent<Player>().healthBar.SetHealth(Player.playerProps.health);
+        Player.playerProps.healthBar.SetHealth(Player.playerProps.health);
 
         isAnswered = false;
         questionManager.SetQuestions();

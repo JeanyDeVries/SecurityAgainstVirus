@@ -106,7 +106,7 @@ public class Virus : MonoBehaviour
         audioSourceAttack.Play();
 
         Player.playerProps.health -= properties.damage;
-        target.GetComponent<Player>().healthBar.SetHealth(Player.playerProps.health);
+        Player.playerProps.healthBar.SetHealth(Player.playerProps.health);
     }
 
     private void Die()
