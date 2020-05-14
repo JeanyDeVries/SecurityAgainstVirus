@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
         for (int i = 0; i < collision.contactCount; i++)
         {
             Vector3 normal = collision.GetContact(i).normal;
-            onGround |= normal.y >= 0.9f;
+            onGround |= normal.y >= 1f;
         }
     }
 }
