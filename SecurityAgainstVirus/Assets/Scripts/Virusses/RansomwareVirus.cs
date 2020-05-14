@@ -42,6 +42,10 @@ public class RansomwareVirus : Virus
         }
         canSpawnParticles = false;
         Player.playerProps.money -= (int)drainAmount;
+
+        animator.SetBool("Idle", false);
+        animator.SetBool("Attack", true);
+        animator.SetBool("Follow", false);
     }
 
     public override void Update()
@@ -79,6 +83,8 @@ public class RansomwareVirus : Virus
 
     public override void DealDamage(Transform target)
     {
-        
+        animator.SetBool("Idle", true);
+        animator.SetBool("Attack", false);
+        animator.SetBool("Follow", false);
     }
 }

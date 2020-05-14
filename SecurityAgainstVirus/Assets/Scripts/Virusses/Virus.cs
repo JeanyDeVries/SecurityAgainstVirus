@@ -2,10 +2,16 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Animator))]
 public class Virus : MonoBehaviour
 {
     [Header("Properties for the virus")]
     public VirusProps properties;
+
+    [Header("Animations")]
+    public Animator animator;
 
     private float elapsedTime;
     private int counter = 0;
@@ -17,6 +23,8 @@ public class Virus : MonoBehaviour
 
     public virtual void Awake()
     {
+        animator = GetComponent<Animator>();
+
         player = GameObject.FindGameObjectWithTag("Player");
         navMeshAgent = GetComponent<NavMeshAgent>();
 
@@ -38,7 +46,13 @@ public class Virus : MonoBehaviour
         Collider[] hitColliders = 
             Physics.OverlapSphere(transform.position, properties.spotRange);
 
-        if (hitColliders == null) return;
+        if (hitColliders == null)
+        {
+            animator.SetBool("Idle", true);
+            animator.SetBool("Attack", false);
+            animator.SetBool("Follow", false);
+            return;
+        }
 
         for (int i = 0; i < hitColliders.Length; i++)
         {
@@ -62,6 +76,11 @@ public class Virus : MonoBehaviour
     public virtual void Follow(Transform target)
     {
         if (isDying) return;
+
+        animator.SetBool("Idle", false);
+        animator.SetBool("Attack", false);
+        animator.SetBool("Follow", true);
+
         Vector3 targetPos = new Vector3(target.position.x,
             target.position.y + 1f,
             target.position.z);
@@ -103,6 +122,9 @@ public class Virus : MonoBehaviour
     public virtual void DealDamage(Transform target)
     {
         //Play attack animation + sound
+        animator.SetBool("Idle", false);
+        animator.SetBool("Attack", true);
+        animator.SetBool("Follow", false);
         audioSourceAttack.Play();
 
         Player.playerProps.health -= properties.damage;
