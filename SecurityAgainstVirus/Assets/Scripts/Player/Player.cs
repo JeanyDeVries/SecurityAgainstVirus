@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     [SerializeField] private float maxHealth, 
         startMoney, jumpHeight;
 
+    [Header("Sounds")]
+    [SerializeField] private AudioClip deathSound;
+
     [Header("Objects that needs to be dragged in the inspector")]
     public HealthBar healthBar;
     [SerializeField] private GameObject deathUI;
@@ -20,6 +23,7 @@ public class Player : MonoBehaviour
     private Rigidbody rb;
     private bool onGround;
     private Vector3 velocity;
+    private AudioSource audioSourceDeath;
 
     private void Start()
     {
@@ -32,6 +36,10 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         healthBar.SetMaxHealth(maxHealth);
+
+        audioSourceDeath = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
+        audioSourceDeath.clip = deathSound;
+        audioSourceDeath.volume = 0.5f;
     }
 
     private void Update()
@@ -73,6 +81,7 @@ public class Player : MonoBehaviour
     {
         if(playerProps.health <= 0)
         {
+            audioSourceDeath.Play();
             deathUI.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             playerProps.health = maxHealth;

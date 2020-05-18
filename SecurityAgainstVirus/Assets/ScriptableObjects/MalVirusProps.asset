@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: MalVirusProps
   m_EditorClassIdentifier: 
   spotRange: 30
-  attackRange: 4
+  attackRange: 2
   movementSpeed: 5
-  damage: 20
+  damage: 4
   attackCooldown: 3
   restorationTime: 3
   turnSpeed: 2

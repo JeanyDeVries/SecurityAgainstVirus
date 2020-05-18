@@ -5,6 +5,8 @@ public class MeleeAttack : MonoBehaviour
 {
     [SerializeField] private float knockBackAmount;
 
+    private AudioSource audioSourceAttack;
+
     private void PushBack(GameObject virus)
     {
         Vector3 distance = transform.position - virus.transform.position;
