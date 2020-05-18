@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (onGround && Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {
             Jump();
         }
@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
         for (int i = 0; i < collision.contactCount; i++)
         {
             Vector3 normal = collision.GetContact(i).normal;
-            onGround |= normal.y >= 1f;
+            onGround = normal.y >= 0.8f;
         }
     }
 }
