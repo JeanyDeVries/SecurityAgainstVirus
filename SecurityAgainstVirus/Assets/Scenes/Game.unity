@@ -3347,6 +3347,36 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 5567858411682255698, guid: bf7ea57936eb9e040988626a6b37e5fe,
+        type: 3}
+      propertyPath: knockBackAmount
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515671293164912066, guid: bf7ea57936eb9e040988626a6b37e5fe,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.38792887
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515671293164912066, guid: bf7ea57936eb9e040988626a6b37e5fe,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.015909849
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515671293164912066, guid: bf7ea57936eb9e040988626a6b37e5fe,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.0090461895
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515671293164912066, guid: bf7ea57936eb9e040988626a6b37e5fe,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.151195
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567858411563088083, guid: bf7ea57936eb9e040988626a6b37e5fe,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.716
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf7ea57936eb9e040988626a6b37e5fe, type: 3}
 --- !u!1001 &5781413239098836343
@@ -3356,11 +3386,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1151176222}
     m_Modifications:
-    - target: {fileID: 2529432699518380540, guid: a813c7fff0e77d445bec75482569fcc5,
-        type: 3}
-      propertyPath: m_Name
-      value: Ransomware_Virus
-      objectReference: {fileID: 0}
     - target: {fileID: 1531505878402472943, guid: a813c7fff0e77d445bec75482569fcc5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3416,10 +3441,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2529432699518380537, guid: a813c7fff0e77d445bec75482569fcc5,
+    - target: {fileID: 2529432699518380540, guid: a813c7fff0e77d445bec75482569fcc5,
         type: 3}
-      propertyPath: m_BaseOffset
-      value: 0.2
+      propertyPath: m_Name
+      value: Ransomware_Virus
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a813c7fff0e77d445bec75482569fcc5, type: 3}
@@ -3585,11 +3610,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1151176222}
     m_Modifications:
-    - target: {fileID: 3600774999112553090, guid: 80085c7e2fa6964409a9145300cf7fc9,
-        type: 3}
-      propertyPath: m_Name
-      value: Malware_Virus
-      objectReference: {fileID: 0}
     - target: {fileID: 550525542317744273, guid: 80085c7e2fa6964409a9145300cf7fc9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3644,6 +3664,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3600774999112553090, guid: 80085c7e2fa6964409a9145300cf7fc9,
+        type: 3}
+      propertyPath: m_Name
+      value: Malware_Virus
       objectReference: {fileID: 0}
     - target: {fileID: 3600774999112553209, guid: 80085c7e2fa6964409a9145300cf7fc9,
         type: 3}
