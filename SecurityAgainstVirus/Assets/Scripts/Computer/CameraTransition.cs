@@ -3,12 +3,7 @@
 public class CameraTransition : MonoBehaviour
 {
     [Header("Properties that can be changed and balanced")]
-    [SerializeField] private float range, zoomInSpeed;
-
-    [Header("Additional properties")]
-    [SerializeField] private Transform targetPoint;
-
-    private float counter = 0;
+    [SerializeField] private float range;
 
     private void Update()
     {
@@ -21,17 +16,6 @@ public class CameraTransition : MonoBehaviour
         {
             if (hitColliders[i].tag == "Player")
             {
-                Camera.main.transform.position = 
-                    Vector3.Slerp(Camera.main.transform.position, targetPoint.position, zoomInSpeed * Time.deltaTime);
-                Camera.main.transform.rotation =
-                    Quaternion.Slerp(Camera.main.transform.rotation, targetPoint.rotation, zoomInSpeed * Time.deltaTime);
-                if (counter == 0 && Camera.main.transform.position == targetPoint.position)
-                {
-                    hitColliders[i].gameObject.transform.position = Camera.main.transform.position;
-                    hitColliders[i].gameObject.transform.rotation = Camera.main.transform.rotation;
-                    counter++;
-                }
-
                 Cursor.lockState = CursorLockMode.None;
             }
 
@@ -44,6 +28,5 @@ public class CameraTransition : MonoBehaviour
     private void Reset()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        counter--;
     }
 }
