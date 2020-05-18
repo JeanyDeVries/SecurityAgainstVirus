@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
 
     [Header("Objects that needs to be dragged in the inspector")]
     public HealthBar healthBar;
+    [SerializeField] private GameObject deathUI;
 
     [Header("Properties that needs to be accessed by other scripts")]
     public bool isInFirewall;
@@ -20,7 +21,7 @@ public class Player : MonoBehaviour
     private bool onGround;
     private Vector3 velocity;
 
-    private void Awake()
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
         playerProps = new PlayerProps();
@@ -31,11 +32,13 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         healthBar.SetMaxHealth(maxHealth);
+        Time.timeScale = 1.0f;
     }
 
     private void Update()
     {
         MoveForward();
+        CheckHealth();
     }
 
     private void FixedUpdate()
@@ -65,6 +68,16 @@ public class Player : MonoBehaviour
         playerInput *= Time.deltaTime;
 
         transform.Translate(0, 0, playerInput.y * movementSpeed);
+    }
+
+    private void CheckHealth()
+    {
+        if(playerProps.health <= 0)
+        {
+            deathUI.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0.0f;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -15,7 +15,7 @@ MonoBehaviour:
   spotRange: 30
   attackRange: 4
   movementSpeed: 5
-  damage: 2
+  damage: 20
   attackCooldown: 3
   restorationTime: 3
   turnSpeed: 2
