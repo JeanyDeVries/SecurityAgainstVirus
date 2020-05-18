@@ -32,7 +32,6 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         healthBar.SetMaxHealth(maxHealth);
-        Time.timeScale = 1.0f;
     }
 
     private void Update()
@@ -76,6 +75,7 @@ public class Player : MonoBehaviour
         {
             deathUI.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
+            playerProps.health = maxHealth;
             Time.timeScale = 0.0f;
         }
     }
