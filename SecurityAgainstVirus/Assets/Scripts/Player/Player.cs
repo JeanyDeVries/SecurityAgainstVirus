@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     [Header("Objects that needs to be dragged in the inspector")]
     public HealthBar healthBar;
     [SerializeField] private GameObject deathUI;
+    [SerializeField] private GameObject escapeUI;
 
     [Header("Properties that needs to be accessed by other scripts")]
     public bool isInFirewall;
@@ -46,15 +47,31 @@ public class Player : MonoBehaviour
     {
         MoveForward();
         CheckHealth();
-    }
 
-    private void FixedUpdate()
-    {
         if (Input.GetButtonDown("Jump"))
         {
             Jump();
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (escapeUI.activeSelf == true)
+            {
+                escapeUI.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;
+                Time.timeScale = 1.0f;
+            }
+            else
+            {
+                escapeUI.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Time.timeScale = 0.0f;
+            }
+        }
+    }
+
+    private void FixedUpdate()
+    {
         onGround = false;
     }
 
