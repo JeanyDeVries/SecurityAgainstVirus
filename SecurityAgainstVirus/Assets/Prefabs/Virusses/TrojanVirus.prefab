@@ -44,6 +44,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   properties: {fileID: 11400000, guid: 392912d565c852a44b55d96b18a5b852, type: 2}
-  humanModel: {fileID: 1773016726961540, guid: 860f1ef61724f0a44a072087734ca3cf, type: 3}
-  malwareModel: {fileID: 7952566512237892368, guid: b61c254c0badcfe4bbe59b4f76fc5202,
-    type: 3}
+  animator: {fileID: 0}
+  humanModels:
+  - {fileID: 5360300862217362836, guid: 1f7766b754823724a97552906d035cec, type: 3}
+  - {fileID: 2895701510148184427, guid: eb4ede7e591ea274abe047ab545c97d3, type: 3}
+  - {fileID: 3546836347025655122, guid: 2b47508c7ebce2944b15f75b2dfe7b5a, type: 3}
+  - {fileID: 5770860935578208852, guid: e967512248f461b4b945cc0ec752d829, type: 3}
+  - {fileID: 7025674662097987987, guid: 51164461960b54644b4acef83f6f4737, type: 3}
+  - {fileID: 1526926650758169802, guid: 89b0a887ab0d73c49a5d5e68ad331717, type: 3}
+  malwareModel: {fileID: 0}

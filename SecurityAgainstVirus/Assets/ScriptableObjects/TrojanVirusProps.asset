@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f74cc1e631f514a945885e428c0e61, type: 3}
   m_Name: TrojanVirusProps
   m_EditorClassIdentifier: 
-  spotRange: 5
+  spotRange: 2
   attackRange: 1
   movementSpeed: 5
   damage: 2

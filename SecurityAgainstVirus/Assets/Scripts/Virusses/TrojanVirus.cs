@@ -1,10 +1,11 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class TrojanVirus : Virus
 {
     [Header("Models")]
-    [SerializeField] private GameObject humanModel;
+    [SerializeField] private List <GameObject> humanModels;
     [SerializeField] private GameObject malwareModel;
 
     private GameObject currentModel;
@@ -12,7 +13,9 @@ public class TrojanVirus : Virus
 
     public override void Awake()
     {
-        currentModel = Instantiate(humanModel, transform.position, transform.rotation) as GameObject;
+        int randomHumanIndex = Random.Range(0, humanModels.Count - 1);
+
+        currentModel = Instantiate(humanModels[randomHumanIndex], transform.position, transform.rotation) as GameObject;
         currentModel.transform.parent = transform;
 
         base.Awake();
