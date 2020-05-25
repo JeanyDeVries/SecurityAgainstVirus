@@ -23,7 +23,8 @@ public class Virus : MonoBehaviour
 
     public virtual void Awake()
     {
-        animator = GetComponent<Animator>();
+        if(animator == null)
+            animator = GetComponent<Animator>();
 
         player = GameObject.FindGameObjectWithTag("Player");
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -133,6 +134,11 @@ public class Virus : MonoBehaviour
         animator.SetBool("Follow", false);
         audioSourceAttack.Play();
 
+        DealDamageToPlayer();
+    }
+
+    public virtual void DealDamageToPlayer()
+    {
         Player.playerProps.health -= properties.damage;
         Player.playerProps.healthBar.SetHealth(Player.playerProps.health);
     }
