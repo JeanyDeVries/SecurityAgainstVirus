@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
 
         audioSourceDeath = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
         audioSourceDeath.clip = deathSound;
-        audioSourceDeath.volume = 0.5f;
+        audioSourceDeath.volume = 0.1f;
     }
 
     private void Update()
