@@ -2426,11 +2426,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1151176222}
     m_Modifications:
-    - target: {fileID: 3227485311679041279, guid: 928b054a010b0d746aaf5a022ed37af3,
-        type: 3}
-      propertyPath: m_Name
-      value: Wasp
-      objectReference: {fileID: 0}
     - target: {fileID: 1914325689448627436, guid: 928b054a010b0d746aaf5a022ed37af3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2485,6 +2480,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227485311679041279, guid: 928b054a010b0d746aaf5a022ed37af3,
+        type: 3}
+      propertyPath: m_Name
+      value: Wasp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 928b054a010b0d746aaf5a022ed37af3, type: 3}
@@ -3733,11 +3733,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1869607519}
     m_Modifications:
-    - target: {fileID: 6195116829045474347, guid: 3d058848e10166b478f98d81046a29e0,
-        type: 3}
-      propertyPath: m_Name
-      value: MoneyPickup (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 2713550629443672701, guid: 3d058848e10166b478f98d81046a29e0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3792,6 +3787,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195116829045474347, guid: 3d058848e10166b478f98d81046a29e0,
+        type: 3}
+      propertyPath: m_Name
+      value: MoneyPickup (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d058848e10166b478f98d81046a29e0, type: 3}
@@ -3888,11 +3888,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1869607519}
     m_Modifications:
-    - target: {fileID: 6195116829045474347, guid: 3d058848e10166b478f98d81046a29e0,
-        type: 3}
-      propertyPath: m_Name
-      value: MoneyPickup (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 2713550629443672701, guid: 3d058848e10166b478f98d81046a29e0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3948,6 +3943,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6195116829045474347, guid: 3d058848e10166b478f98d81046a29e0,
+        type: 3}
+      propertyPath: m_Name
+      value: MoneyPickup (2)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d058848e10166b478f98d81046a29e0, type: 3}
 --- !u!4 &915212640 stripped
@@ -3969,11 +3969,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1869607519}
     m_Modifications:
-    - target: {fileID: 6195116829045474347, guid: 3d058848e10166b478f98d81046a29e0,
-        type: 3}
-      propertyPath: m_Name
-      value: MoneyPickup
-      objectReference: {fileID: 0}
     - target: {fileID: 2713550629443672701, guid: 3d058848e10166b478f98d81046a29e0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4028,6 +4023,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195116829045474347, guid: 3d058848e10166b478f98d81046a29e0,
+        type: 3}
+      propertyPath: m_Name
+      value: MoneyPickup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d058848e10166b478f98d81046a29e0, type: 3}
@@ -4208,11 +4208,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1869607519}
     m_Modifications:
-    - target: {fileID: 3006026325543686757, guid: 77741fada937ee54fa8efbd0ea6bc1e5,
-        type: 3}
-      propertyPath: m_Name
-      value: ShieldPickup
-      objectReference: {fileID: 0}
     - target: {fileID: 3006026325544046149, guid: 77741fada937ee54fa8efbd0ea6bc1e5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4267,6 +4262,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3006026325543686757, guid: 77741fada937ee54fa8efbd0ea6bc1e5,
+        type: 3}
+      propertyPath: m_Name
+      value: ShieldPickup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77741fada937ee54fa8efbd0ea6bc1e5, type: 3}
@@ -4713,11 +4713,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1869607519}
     m_Modifications:
-    - target: {fileID: 3006026325543686757, guid: 77741fada937ee54fa8efbd0ea6bc1e5,
-        type: 3}
-      propertyPath: m_Name
-      value: ShieldPickup
-      objectReference: {fileID: 0}
     - target: {fileID: 3006026325544046149, guid: 77741fada937ee54fa8efbd0ea6bc1e5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4772,6 +4767,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3006026325543686757, guid: 77741fada937ee54fa8efbd0ea6bc1e5,
+        type: 3}
+      propertyPath: m_Name
+      value: ShieldPickup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77741fada937ee54fa8efbd0ea6bc1e5, type: 3}
@@ -5959,11 +5959,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1869607519}
     m_Modifications:
-    - target: {fileID: 3006026325543686757, guid: 77741fada937ee54fa8efbd0ea6bc1e5,
-        type: 3}
-      propertyPath: m_Name
-      value: ShieldPickup (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 3006026325544046149, guid: 77741fada937ee54fa8efbd0ea6bc1e5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6018,6 +6013,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3006026325543686757, guid: 77741fada937ee54fa8efbd0ea6bc1e5,
+        type: 3}
+      propertyPath: m_Name
+      value: ShieldPickup (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77741fada937ee54fa8efbd0ea6bc1e5, type: 3}
@@ -6148,11 +6148,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1869607519}
     m_Modifications:
-    - target: {fileID: 3006026325543686757, guid: 77741fada937ee54fa8efbd0ea6bc1e5,
-        type: 3}
-      propertyPath: m_Name
-      value: ShieldPickup
-      objectReference: {fileID: 0}
     - target: {fileID: 3006026325544046149, guid: 77741fada937ee54fa8efbd0ea6bc1e5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6207,6 +6202,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3006026325543686757, guid: 77741fada937ee54fa8efbd0ea6bc1e5,
+        type: 3}
+      propertyPath: m_Name
+      value: ShieldPickup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77741fada937ee54fa8efbd0ea6bc1e5, type: 3}
@@ -6992,11 +6992,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1869607519}
     m_Modifications:
-    - target: {fileID: 6195116829045474347, guid: 3d058848e10166b478f98d81046a29e0,
-        type: 3}
-      propertyPath: m_Name
-      value: MoneyPickup (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 2713550629443672701, guid: 3d058848e10166b478f98d81046a29e0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7051,6 +7046,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195116829045474347, guid: 3d058848e10166b478f98d81046a29e0,
+        type: 3}
+      propertyPath: m_Name
+      value: MoneyPickup (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d058848e10166b478f98d81046a29e0, type: 3}
@@ -7375,11 +7375,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1151176222}
     m_Modifications:
-    - target: {fileID: 3227485311679041279, guid: 928b054a010b0d746aaf5a022ed37af3,
-        type: 3}
-      propertyPath: m_Name
-      value: Wasp
-      objectReference: {fileID: 0}
     - target: {fileID: 1914325689448627436, guid: 928b054a010b0d746aaf5a022ed37af3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7434,6 +7429,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227485311679041279, guid: 928b054a010b0d746aaf5a022ed37af3,
+        type: 3}
+      propertyPath: m_Name
+      value: Wasp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 928b054a010b0d746aaf5a022ed37af3, type: 3}
@@ -7602,11 +7602,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1869607519}
     m_Modifications:
-    - target: {fileID: 3006026325543686757, guid: 77741fada937ee54fa8efbd0ea6bc1e5,
-        type: 3}
-      propertyPath: m_Name
-      value: ShieldPickup (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 3006026325544046149, guid: 77741fada937ee54fa8efbd0ea6bc1e5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7661,6 +7656,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3006026325543686757, guid: 77741fada937ee54fa8efbd0ea6bc1e5,
+        type: 3}
+      propertyPath: m_Name
+      value: ShieldPickup (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77741fada937ee54fa8efbd0ea6bc1e5, type: 3}
@@ -7788,11 +7788,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1869607519}
     m_Modifications:
-    - target: {fileID: 6195116829045474347, guid: 3d058848e10166b478f98d81046a29e0,
-        type: 3}
-      propertyPath: m_Name
-      value: MoneyPickup
-      objectReference: {fileID: 0}
     - target: {fileID: 2713550629443672701, guid: 3d058848e10166b478f98d81046a29e0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7847,6 +7842,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195116829045474347, guid: 3d058848e10166b478f98d81046a29e0,
+        type: 3}
+      propertyPath: m_Name
+      value: MoneyPickup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d058848e10166b478f98d81046a29e0, type: 3}
@@ -8756,11 +8756,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1151176222}
     m_Modifications:
-    - target: {fileID: 3227485311679041279, guid: 928b054a010b0d746aaf5a022ed37af3,
-        type: 3}
-      propertyPath: m_Name
-      value: Wasp
-      objectReference: {fileID: 0}
     - target: {fileID: 1914325689448627436, guid: 928b054a010b0d746aaf5a022ed37af3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8815,6 +8810,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227485311679041279, guid: 928b054a010b0d746aaf5a022ed37af3,
+        type: 3}
+      propertyPath: m_Name
+      value: Wasp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 928b054a010b0d746aaf5a022ed37af3, type: 3}
@@ -9152,11 +9152,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1151176222}
     m_Modifications:
-    - target: {fileID: 3227485311679041279, guid: 928b054a010b0d746aaf5a022ed37af3,
-        type: 3}
-      propertyPath: m_Name
-      value: Wasp
-      objectReference: {fileID: 0}
     - target: {fileID: 1914325689448627436, guid: 928b054a010b0d746aaf5a022ed37af3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9211,6 +9206,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227485311679041279, guid: 928b054a010b0d746aaf5a022ed37af3,
+        type: 3}
+      propertyPath: m_Name
+      value: Wasp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 928b054a010b0d746aaf5a022ed37af3, type: 3}
@@ -9585,11 +9585,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1869607519}
     m_Modifications:
-    - target: {fileID: 6195116829045474347, guid: 3d058848e10166b478f98d81046a29e0,
-        type: 3}
-      propertyPath: m_Name
-      value: MoneyPickup
-      objectReference: {fileID: 0}
     - target: {fileID: 2713550629443672701, guid: 3d058848e10166b478f98d81046a29e0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9644,6 +9639,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195116829045474347, guid: 3d058848e10166b478f98d81046a29e0,
+        type: 3}
+      propertyPath: m_Name
+      value: MoneyPickup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d058848e10166b478f98d81046a29e0, type: 3}
@@ -9995,11 +9995,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1869607519}
     m_Modifications:
-    - target: {fileID: 3006026325543686757, guid: 77741fada937ee54fa8efbd0ea6bc1e5,
-        type: 3}
-      propertyPath: m_Name
-      value: ShieldPickup
-      objectReference: {fileID: 0}
     - target: {fileID: 3006026325544046149, guid: 77741fada937ee54fa8efbd0ea6bc1e5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10054,6 +10049,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3006026325543686757, guid: 77741fada937ee54fa8efbd0ea6bc1e5,
+        type: 3}
+      propertyPath: m_Name
+      value: ShieldPickup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77741fada937ee54fa8efbd0ea6bc1e5, type: 3}

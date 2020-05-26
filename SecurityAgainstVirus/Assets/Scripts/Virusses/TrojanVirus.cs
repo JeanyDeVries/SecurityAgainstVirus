@@ -13,7 +13,7 @@ public class TrojanVirus : Virus
 
     public override void Awake()
     {
-        int randomHumanIndex = Random.Range(0, humanModels.Count - 1);
+        int randomHumanIndex = Random.Range(0, humanModels.Count );
 
         currentModel = Instantiate(humanModels[randomHumanIndex], transform.position, transform.rotation) as GameObject;
         currentModel.transform.parent = transform;
