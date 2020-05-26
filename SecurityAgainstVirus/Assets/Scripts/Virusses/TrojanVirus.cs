@@ -26,7 +26,8 @@ public class TrojanVirus : Virus
         IEnumerator couritine = base.WaitingForDeath();
         StartCoroutine(couritine);
 
-        Destroy(currentModel);
+        if(currentModel)
+            Destroy(currentModel);
 
         if (counter == 0f)
         {
