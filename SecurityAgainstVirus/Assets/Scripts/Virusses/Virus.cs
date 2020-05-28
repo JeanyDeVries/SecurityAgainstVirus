@@ -145,7 +145,8 @@ public class Virus : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
+        if(gameObject)
+            Destroy(gameObject);
     }
 
     public IEnumerator WaitingForDeath()
