@@ -373,8 +373,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 0.01
+  far clip plane: 250
   field of view: 80
   orthographic: 0
   orthographic size: 5
@@ -529,7 +529,10 @@ MonoBehaviour:
   maxHealth: 50
   startMoney: 10000
   jumpHeight: 1
+  deathSound: {fileID: 0}
   healthBar: {fileID: 0}
+  deathUI: {fileID: 0}
+  escapeUI: {fileID: 0}
   isInFirewall: 0
 --- !u!114 &5567858411682255698
 MonoBehaviour:
