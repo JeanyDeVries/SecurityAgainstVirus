@@ -4,6 +4,12 @@ using UnityEngine;
 
 public abstract class ShuffleList
 {
+    /// <summary>
+    /// Shuffles all the answers of the questions in the list
+    /// so it can be random displayed everytime on the computerscreen
+    /// </summary>
+    /// <param name="inputList">Parameter value to pass.</param>
+    /// <returns> Returns the list which has been randomized. </returns>
     public static List<E> ShuffleListItems<E>(List<E> inputList)
     {
         List<E> originalList = new List<E>();

@@ -16,10 +16,13 @@ public class ShieldPickup : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
-            AddMoney();
+            AddHealth();
     }
 
-    private void AddMoney()
+    /// <summary>
+    /// Adds health to the player and plays the audio
+    /// </summary>
+    private void AddHealth()
     {
         Player.playerProps.health += protectionPickupAmount;
         Player.playerProps.healthBar.SetHealth(Player.playerProps.health);
@@ -35,6 +38,9 @@ public class ShieldPickup : MonoBehaviour
             Quaternion.Euler(0, 180 * Mathf.Sin(Time.time * rotationSpeed), 0f);
     }
 
+    /// <summary>
+    /// Destroys the object when the audioclip has been finished
+    /// </summary>
     private IEnumerator WaitingForDeath()
     {
         yield return new WaitForSeconds(audioSource.clip.length);

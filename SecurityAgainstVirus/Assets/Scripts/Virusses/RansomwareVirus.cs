@@ -22,6 +22,11 @@ public class RansomwareVirus : Virus
         drainAudioSource.volume = 0.5f;
     }
 
+    /// <summary>
+    /// Checks if it is in distance and if it is in the firewall. 
+    /// If the player is in the firewall it will not drain money
+    /// </summary>
+    /// <param name="target">Parameter value to pass.</param>
     public override void CheckIfInAttackDistance(Transform target) 
     {
         base.CheckIfInAttackDistance(target);
@@ -33,6 +38,9 @@ public class RansomwareVirus : Virus
             Reset();
     }
 
+    /// <summary>
+    /// Drains the money of the player, spawn particles and plays the correct animation
+    /// </summary>
     private void DrainMoney()
     {
         if(canSpawnParticles)
@@ -81,6 +89,11 @@ public class RansomwareVirus : Virus
         Destroy(drainParticles);
     }
 
+    /// <summary>
+    /// It overrides the method so it won't deal close damage. 
+    /// It will just be in idle state
+    /// </summary>
+    /// <param name="target">Parameter value to pass.</param>
     public override void DealDamage(Transform target)
     {
         animator.SetBool("Idle", true);

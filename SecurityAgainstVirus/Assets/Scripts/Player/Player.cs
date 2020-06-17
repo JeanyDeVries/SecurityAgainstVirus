@@ -116,6 +116,9 @@ public class Player : MonoBehaviour
         EvaluateCollision(collision);
     }
 
+    /// <summary>
+    /// Checks if the player is on the ground, by looking at the normals
+    /// </summary>
     private void EvaluateCollision(Collision collision)
     {
         for (int i = 0; i < collision.contactCount; i++)

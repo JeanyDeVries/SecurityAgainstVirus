@@ -13,6 +13,7 @@ public class AdwareVirus : Virus
     {
         base.DealDamage(target);
 
+        //When it is in the attack state, it will spawn ads
         if(animator.GetCurrentAnimatorStateInfo(0).IsName("Sting") 
             || animator.GetCurrentAnimatorStateInfo(0).IsName("ReverseSting 0 0"))
         {
@@ -24,6 +25,7 @@ public class AdwareVirus : Virus
         }
     }
 
+    //This is overridden so it won't do the base method
     public override void DealDamageToPlayer()
     {
         

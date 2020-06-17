@@ -40,6 +40,10 @@ public class ComputerScreen : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Gets a random question and removes it out of the list so it will not be repeated.
+    /// The corresponding answers are also added.
+    /// </summary>
     private void GetRandomQuestion()
     {
         int randomQuestionIndex = Random.Range(0, QuestionManager.unansweredQuestions.Count);
@@ -56,6 +60,9 @@ public class ComputerScreen : MonoBehaviour
         QuestionManager.unansweredQuestions.RemoveAt(randomQuestionIndex);
     }
 
+    /// <summary>
+    /// Sets the text of the buttons with the corresponding question + answers
+    /// </summary>
     private void SetText()
     {
         answers = ShuffleList.ShuffleListItems<string>(currentQuestion.answers);
@@ -68,6 +75,10 @@ public class ComputerScreen : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// When the button is clicked, it checks if it has been answered. If not,it checks if it 
+    /// is the right answer
+    /// </summary>
     private void OnClick(Button btn)
     {
         if (!isAnswered)
@@ -77,6 +88,9 @@ public class ComputerScreen : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Checks if the answer you selected is correct
+    /// </summary>
     public void CheckIfCorrectAnswer(string selectedOption)
     {
         if (currentQuestion.correctAnswer == selectedOption)
@@ -89,6 +103,10 @@ public class ComputerScreen : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// If the answer is correct, it will enable the dissolve shader and 
+    /// will not display the computer anymore
+    /// </summary>
     private void CorrectAnswer()
     {
         door.GetComponent<DissolveSphere>().enabled = true;
@@ -98,6 +116,10 @@ public class ComputerScreen : MonoBehaviour
         emissionFinished = true;
     }
 
+    /// <summary>
+    /// When the player chooses the wrong answer, health will drop and the 
+    /// question will be reset
+    /// </summary>
     private void WrongAnswer()
     {
         Player.playerProps.health -= damage;

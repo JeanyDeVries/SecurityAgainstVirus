@@ -42,6 +42,11 @@ public class Virus : MonoBehaviour
         checkForCollision();
     }
 
+    /// <summary>
+    /// Checks for collision, if there is none then the virus will be idle.
+    /// If there is collision with the player, the navmesh will follow the player
+    /// </summary>
+    /// <param name="myBool">Parameter value to pass.</param>
     public virtual void checkForCollision()
     {
         Collider[] hitColliders = 
@@ -74,6 +79,11 @@ public class Virus : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// the navmeshagent follows the player, but when it is in attackrange
+    /// it will attack the player.
+    /// </summary>
+    /// <param name="target">Parameter value to pass.</param>
     public virtual void Follow(Transform target)
     {
         if (isDying) return;
@@ -101,6 +111,11 @@ public class Virus : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Checks if you can attack, if so deal damage. Also checks if you're
+    /// out of attackrange, if so go back to follow
+    /// </summary>
+    /// <param name="target">Parameter value to pass.</param>
     public virtual void CheckIfInAttackDistance(Transform target)
     {
         elapsedTime += Time.deltaTime;
@@ -122,6 +137,10 @@ public class Virus : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// It keeps looking at the player + the attackanimation will play.
+    /// </summary>
+    /// <param name="target">Parameter value to pass.</param>
     public virtual void DealDamage(Transform target)
     {
         Vector3 targetForward = (player.transform.position - transform.position);
@@ -137,6 +156,9 @@ public class Virus : MonoBehaviour
         DealDamageToPlayer();
     }
 
+    /// <summary>
+    /// Deals damage to the player and drops the health
+    /// </summary>
     public virtual void DealDamageToPlayer()
     {
         Player.playerProps.health -= properties.damage;
@@ -149,6 +171,10 @@ public class Virus : MonoBehaviour
             Destroy(gameObject);
     }
 
+    /// <summary>
+    /// Virus dies when the audio clip is finished. Before that it plays
+    /// the audio and spawn a particle effect
+    /// </summary>
     public IEnumerator WaitingForDeath()
     {
         isDying = true;
@@ -174,6 +200,10 @@ public class Virus : MonoBehaviour
         StartCoroutine(couritine);
     }
 
+    /// <summary>
+    /// When the virus is pushed back it will, after the restorationtime,
+    /// rotate back to the player and follow it again.
+    /// </summary>
     private IEnumerator RestoreForceAfterTime()
     {
         yield return new WaitForSeconds(properties.restorationTime);

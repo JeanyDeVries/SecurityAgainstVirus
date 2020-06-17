@@ -16,12 +16,17 @@ public class adsScript : MonoBehaviour
         start = transform.position;
         target = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(Curve());
+
+        //Sets the endpoint of the curve, which is the player
         Vector3 targetPos = new Vector3(Random.Range(target.transform.position.x - 0.5f, target.transform.position.x + 0.5f),
             Random.Range(target.transform.position.y - 0.5f, target.transform.position.y + 0.5f),
             Random.Range(target.transform.position.z - 0.5f, target.transform.position.z + 0.5f));
         end = targetPos;
     }
 
+    /// <summary>
+    /// It makes the ad make a curve, which lerps from the virus to the endpoint (player)
+    /// </summary>
     private IEnumerator Curve()
     {
         while (time < duration)
@@ -47,7 +52,6 @@ public class adsScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Play hit animation
         if(other.tag == "Firewall")
         {
             Destroy(this.gameObject);

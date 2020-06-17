@@ -9,6 +9,10 @@ public class QuestionManager : MonoBehaviour
 
     public static List<Question> unansweredQuestions;
 
+    /// <summary>
+    /// If there are no more unanswered questions (or it is null), the questions will 
+    /// once again be added to the unansweredQuestions list
+    /// </summary>
     public void SetQuestions()
     {
         if (unansweredQuestions == null || unansweredQuestions.Count == 0)
